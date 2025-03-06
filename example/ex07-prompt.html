@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let a = prompt("숫자를 입력하세요");
+        // document.write("입력된 숫자: " + a);
+
+
+        // let a = prompt("숫자를 입력하세요");
+        // let b = prompt("숫자를 입력하세요");
+        // document.write("입력된 숫자: " + (a - b));
+
+        // let a = parseInt(prompt("숫자를 입력하세요"));
+        // let b = parseInt(prompt("숫자를 입력하세요"));
+        // document.write("입력된 숫자: " + (a + b) );
+        
+
+
+        // prompt로 받은 인수를 온전히 정수로 받아서 변환하는 것이 
+        // parseInt의 역할임.
+        //자바 스크립트를 통해 동적인 html을 만들 수 있다.
+        //실수로도 바꿀 수 있음.
+        //parseFloat()하면 실수로 바꿀 수 있음.
+        //prompt의 문자에 숫자붙이면 문자가 됨.
+
+        // let num, add;
+        // num = prompt("숫자를 입력하세요");
+        // num= parseInt(num);
+        // add= num + 22;
+        // document.write("parseInt + 22: " + add);
+
+        // let num, add;
+        // num= prompt("숫자를 입력하세요");
+        // document.write("num: " + typeof(num) + "<hr>");
+        // add = num + 22;
+        // document.write("num + 22: " + add + "<hr>");
+        // num= parseInt(num);
+        // add= num + 22;
+        // document.write("parseInt +22: " +add );
+
+
+
+        //typeof(num) 를 실행하면 이 괄호안에 들어있는 변수가 무슨
+        //종류인지가 나옴. prompt에 10을 입력하면 첫줄에
+        // string으로 나옴. 숫자는 무조건 numnber
+        //typeof를 하면 종류가 변함. false를 넣으면 boolean
+
+        let num, add;
+        num = prompt("숫자를 입력하세요");
+        document.write("num: " + num + "<hr>");
+        add= num + 22;
+        document.write("num + 22: " + add + "<hr>" ) ;
+        num = parseInt(num);
+        add = num + 22;
+        document.write("parseInt + 22: " + add);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!-- alt shift f 눌르면 자동정렬이 됨.-->
