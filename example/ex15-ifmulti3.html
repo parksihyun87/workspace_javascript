@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let score= parseInt(prompt("점수를 입력하세요: (0~100)"));
+
+    if(score<0 || score>100){
+        document.write("잘못입니다.");
+    } 
+
+    else{
+    
+        if(score>=60){
+            document.write("합격입니다. <br>");
+// 중괄호 안에 다시 if.
+            if(score >= 90 && score<=100 ){
+                document.write("A등급입니다.");
+            }
+
+            else if (score>=80 && score<=89 ){
+                document.write("B등급입니다.");
+            }
+
+            else if (score>=70 && score<=79 ){
+                document.write("C등급입니다.");
+            }
+
+            else{
+                document.write("D등급입니다.");
+            }
+        }
+
+        else { 
+            document.write("불합격입니다.");
+        }
+    }
+
+    let score= parseInt(prompt("점수를 입력하세요: (0~100)"));
+
+    if(score<0 || score>100){
+        document.write("잘못입니다.");
+    }else{
+        if(score>=60){
+            document.write("합격입니다. <br>");
+            
+        }
+    }
+
+
+
+
+
+
+//if 중첩문 만들기
+
+// 불필요한 과정을 줄이자.
+// 맨처음에 오류먼저 걸러내는 것이 과정이 줄어듬.
+// 보통 or 연산자를 많이 씀.
+// 알 쉽 엪 정렬은 어지간하면 안먹히는 건가?
+
+    
+    
+//     if(score >= 90 && score<=100 ){
+//         document.write("A등급입니다.");
+//     }
+
+//     else if (score>=80 && score<=89 ){
+//         document.write("B등급입니다.");
+//     }
+
+//     else if (score>=70 && score<=79 ){
+//         document.write("C등급입니다.");
+//     }
+
+//     else if (score>=60 && score<=69 ){
+//         document.write("D등급입니다.");
+//     }
+    
+//     else if (score>=50 && score<=59 ){
+//         document.write("E등급입니다.");
+//     }
+
+//     else if (score>=0 && score<=49 ){
+//         document.write("F등급입니다.");
+//     }
+
+//     else{
+//         document.write("잘못 입력했습니다.");
+//     }
+
+// // parseInt가 없어도 되지만
+// // 문자열이지만 숫자로 비슷하게 생겨서 수식이 먹히는 경우임
+// // 엄격하게 이용하려면 &&를 추가함.
+// // 그러나 6*3의 과정을 거쳐서 내려와야 되는데 점수가 낮으면 
+// // 과정이 아쉬움.
+
+ </script>
+
+ <body>
+    
+ </body>
+ </html>

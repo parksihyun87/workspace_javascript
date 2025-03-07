@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let coupon = Number(prompt("숫자 타이핑"));
+        let prize
+        if(coupon >=20){
+            prize = "캐리어 입니다."; 
+        }
+
+        else if(coupon <20 && coupon >=10){
+            prize = " 다이어리 입니다.";
+        }
+
+        else{
+            prize = " 아아 입니다.";
+        }
+
+        document.write(prize);
+
+        //비교 연산자를 쓸때는 범위상 한방향을 지정하여 
+        // 다른 범위에 포함되도록
+        //연속해서 지정해야 여러번 지정하지 않게 된다.
+        //맨 윗줄에서부터 그렇게 포함하면서 내려오면 된다.
+
+        // if와 else if가 들어간 구문은 if의 참 거짓 여부를 계속 따라 내려가다가
+        //마지막의 선택 조건 구문이 끝났을때 최후의 거짓항에는 else를 붙여서
+        //끝내준다.
+        // 그러나 너무 많은 else if를 쓰면 가독성이 떨어짐.
+        // 다른 구문을 사용한다.
+
+        
+
+    </script>
+
+    
+</head>
+<body>
+    
+</body>
+</html>

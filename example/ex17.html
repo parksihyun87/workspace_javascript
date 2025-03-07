@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let age = parseInt(prompt("나이는?"));
+        let mem = prompt("멤버쉽이 있나요?(예/아니오)");
+       
+        // let o_price =  20000;
+        // let c_sale = 0.5;
+        // let m_sale = 0.9;
+
+        // if (mem === "예" || mem === "아니오") {
+        //     if (age <= 13) {
+        //         if (mem === "예") {
+        //             document.write((o_price * c_sale * m_sale) + "원 입니다.");
+        //         } else {
+        //             document.write((o_price * c_sale) + "원 입니다.");
+        //         }
+        //     }
+        //     else {
+        //         if (mem === "예") {
+        //             document.write((o_price * m_sale) + "원 입니다.");
+        //         } else {
+        //             document.write(o_price + "원 입니다.");
+        //         }
+        //     }
+        // } else {
+        //     document.write("잘못된 입력입니다.")
+        // }
+        
+
+
+        // 13살 이하면 반값(어린이) 50%.
+        // 멤버십이면 10%를 깎아줌.
+        // 원래 가격은 10,000원
+
+        let price = 20000;
+        let isDiscount= false;
+
+        if(age <0 || !(mem==="예"|| mem==="아니오" )){
+            document.write("잘못입력하였습니다.")
+        }
+        // 잘못된 것 분류할때 프롬프트 입력은 ||와 같이 쓰며
+        // ||는 바른 입력, 혹은 틀린 입력의 상태를 가진다.
+        // 잘못된 것을 if로 바로 출력하려면 잘못된것을 
+        // 선택해야 하는데 다시 ||를 쓰고 상태는 true로
+        // 바꿔서 선택이 가능하게 한다.
+
+
+
+        if(age <=13 ){
+            document.write("어린이 할인이 되었습니다. ");
+            price = price * 0.5;
+        }else if(age>=60){
+            document.write("노인 할인이 되었습니다.");
+            price = price * 0.7;
+        }
+
+        else if 
+
+
+
+        if(mem === "예"){
+            price = price * 0.9;
+        }
+
+        document.write("최종 입장료: " + price + "원 입니다." );
+
+        //이렇게만 해도 됨.
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</head>
+
+
+<body>
+
+</body>
+
+</html>
