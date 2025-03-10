@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 기본요금 선언
+        let oPrice = 3000;
+        // 시간(시간은 사용자에게 입력을 받는다.)
+        let time = parseInt(prompt("탑승시간 0~24"));
+        let km = parseInt(prompt("거리를 입력하세요 km"));
+        let price= 0;
+
+        if(time<0||time>=24||km<0){
+            document.write("잘못된 입력입니다.");
+        }
+        else{
+            if (km<=10){
+                price = oPrice + (km*500);
+            }else{
+                price = oPrice + (km*700);
+            }
+            //안에도 주석
+
+            ///위에 price에 perKmFare= 500; perKmFare= 700;
+            /// 이 위치에다가 totalFare= baseFare+(distance *
+            /// perKmFare);
+
+
+            if(time<=6||time>=22)
+            {            
+                price= (price* 1.2);
+            }
+       
+        document.write("요금은" + price +"원 입니다.");
+        }            
+
+    //입력데이터 (거리km, 탑승시간 0~23시간)
+    
+    // 기본요금은 3000원 입니다.
+    // 할증시간: 22 ~ 06, 
+    // 거리가 10km 이하이면: 1km당 500원
+    // 10km 초과이면: 1km 700원
+    // 할증시간대면 20% 추가요금
+    // 개발자도구 어디에서 표시됨...?
+
+    // 선택지 생각
+    // (1)1. 할증시간대에 탄다. 
+    //         1-1. 비초과거리
+    //         1-2. 초과거리
+    //     2. 비할증시간대에 탄다
+    //         1-1. 비초과거리
+    //         1-2. 초과거리
+    //         p
+    //
+    //-- 내가 푼것
+
+    // 선택지 생각
+    // (2)1. 할증시간대에 탄다.
+    //    2. 비할증 시간대에 탄다.
+
+    //    1.(결과에 영향미치는)초과거리 여부
+    //    p
+
+     // 선택지(특히 결과)는 중첩if문과만 결속하는게 아니라
+     // 결과값이 평if문과도 결합하여 한쪽만 작용을 할수 있다.
+     // 그러므로
+     // 중첩:선택지2개 > (선택지안의 소선택지2개) 가 가능하고
+     // 간략: 선택지2개 > (후발 if선택지로 else 뺀 한개 선택지로
+     //결과 영향 주기) 
+     // 로 두개 다 영향주는 것이 가능하다.
+
+
+    // 잘못된 것 거르기
+
+    // 1. 거리가 0키로 미만
+    // 2. 시간이 0미만 24 이상
+
+    /// 현실에서 생각하는 법 적용- 60점 미만 과락하고.. 처리
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

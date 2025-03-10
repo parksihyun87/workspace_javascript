@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let dayNumber = new Date().getDay();
+        // 뉴뎃은 오늘 요일 번호 구하는 함수
+        let dayName = "";
+        switch (dayNumber) {
+            case 0:
+                dayName = "일요일";
+                break;
+
+            case 1:
+                dayName = "월요일";
+                break;
+
+            case 2:
+                dayName = "화요일";
+
+                break;
+
+            case 3:
+                dayName = "수요일";
+                break;
+
+            case 4:
+                dayName = "목요일";
+                break;
+
+            case 5:
+                dayname = "금요일";
+                break;
+
+            case 6:
+                dayname = "토요일";
+                break;
+
+            default:
+                dayname = "잘못된 값";
+        }
+        document.write(dayName);
+        //브레이크 없으면 거침없이 내려감
+        //스위치는 ()괄호안이 주관계대상이고
+        // 관계맺는 것은 (case, 값,: (뒤따르는 목록) 및 dafault, break)이다.
+        // ()는 case + 공백뒤의 값과 관계를 맺는다.
+        // 일단 관계가 맺어지면 case + 공백 뒤의 : 의 
+        // (개별적 주장 내용들, 다음줄 break)과 다시 연관지어 진다.
+
+
+
+
+        
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    let calcType = parseInt(prompt("calcType"));
+    let a = parseInt(prompt("1stN"));
+    let b = parseInt(prompt("2ndN"));
+    let c = 0;
+    let d = "정의할 수 없습니다."
+
+    // if((calcType<1) || (calcType>4)){
+    //     document.write(d);    
+    // }
+
+    // 주석: 아래 위의 두 줄 중 하나
+
+    if( !((calcType>=1) && (calcType<=4)) ){
+        document.write(d);    
+    }
+    
+    else{
+    if (calcType === 1){
+        c = (a + b);
+    } else if (calcType === 2){
+        c = (a - b);
+    } else if (calcType === 3){
+        c = (a * b);
+    } else if(calcType === 4){
+        c = (a / b); 
+    }
+        document.write(c);
+    }
+
+
+    // let calcType = parseInt(prompt("calcType"));
+    // let a = parseInt(prompt("1stN"));
+    // let b = parseInt(prompt("2ndN"));
+    // let c = 0;
+    // let d = "정의할 수 없습니다."
+
+    // if((calcType<1) || (calcType>4)){
+    //     document.write(d);
+    // }
+
+    // else{
+    //     if(clacType ===1){
+    //         c= a + b;
+    //     }
+    // }
+
+
+
+
+    
+
+
+    // if문도 let이라는 재료와 짝 지어야 한다.
+    // let은 let 숫자나 문자와 연결될 수 도 있고 식과 연결될 수도 있지만
+    // if에서의 let은 함수, 그것도 우리가 입력하는 경우로 많이 연결된다. 
+    // 그래서 변수에 더해 위의 두가지, 변수에다가 숫자나 문자와 연결하되 명령문(보통은 메서드)까지 같이 연결해서 흔히 같이 쓴다.
+    // 화면상의 결과값 표출은 "객체" + "." + "메서드" +소괄호 4가지의 결합으로 이루어지며 소괄호 안에 실제 화면에 띄울 것들을 입력한다.
+    // 식간의 관계를 맺는 것은 세심해서 작은 변화에도 동작 안할 수 있다.
+    // 우선 관계의 기본은 ;로 끝을 마무리 짓는 것이다.
+    // parseInt와 prompt도 파스인트가 먼저 나온 후 프롬프트를 입력하는 식으로 전후 관계에 따라 동작한다.
+    // +는 간격과 상관 없음.
+    
+    
+    // 변수라는 것의 등장으로 우리가 저장할 수 있는 것이 처음 생겼다! -메모리와 상관-
+
+    // ! 조건문 확인해 보기
+        
+    // 1 plus 2 minus 3 mulitply 4 divide
+    
+
+    </script>
+    
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

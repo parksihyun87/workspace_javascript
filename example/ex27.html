@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let calcType= parseInt(prompt("계산타입: 1(덧셈) 2(빼기) 3(곱셈) 4(나눗셈)"));
+
+        // switch(calcType){
+
+        //     case 4:
+        //         let a = parseInt(prompt("숫자 A를 입력하세요"));
+        //         let b = parseInt(prompt("숫자 B를 입력하세요"));
+        //         document.write(a/b);
+        //         break;
+
+        //     case 3:
+        //         let a = parseInt(prompt("숫자 A를 입력하세요"));
+        //         let b = parseInt(prompt("숫자 B를 입력하세요"));
+        //         document.write(a*b);
+        //         break;
+
+        //     case 2:
+        //         let a = parseInt(prompt("숫자 A를 입력하세요"));
+        //         let b = parseInt(prompt("숫자 B를 입력하세요"));
+        //         document.write(a-b);
+        //         break;
+
+        //     case 1:
+        //         let a = parseInt(prompt("숫자 A를 입력하세요"));
+        //         let b = parseInt(prompt("숫자 B를 입력하세요"));
+        //         document.write(a+b);
+        //         break;
+
+        //     default:
+        //     document.write("잘못된 입력입니다.");
+        // }
+
+
+        //if문에 넣어서 한번 더 만들기
+
+        let calc = parseInt(prompt("1~4: 계산타입"));
+
+        let c = 0;
+
+        // result가 있는 것이 더 좋은 구문일까? 위 아래 식차이로 굳이 넣고 안넣고
+        //를 구분해도 된다.
+
+        if (!(calc >= 1 && calc <= 4)) {
+            document.write("잘못된 호출입니다.");
+        } else {
+            let a = parseInt(prompt("숫자a입력"));
+            let b = parseInt(prompt("숫자b입력"));
+
+            switch (calc) {
+
+                case 4:
+                    c = (a / b);
+                    break;
+
+                case 3:
+                    c = (a * b);
+                    break;
+
+                case 2:
+                    c = (a - b);
+                    break;
+
+                default:
+                    c = (a + b);
+            }
+            document.write(c);
+        }
+        //틀리면 바로 나오게 하고 싶어서 구문 위치를 조정하자.
+        //도큐를 끝에만 빼면 구문 길이를 줄일 수 있다.
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

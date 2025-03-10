@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let score= parseInt(prompt("점수입력란입니다."));
+        let scoreDiv= parseInt(score/10);
+
+        if(0>score || score>100){
+            document.write("이상 점수 입니다.");    
+        } else {
+        if (score>=60){
+        switch(scoreDiv){
+            case 10:
+
+            case 9:
+            document.write("합격이며, 점수는 " + "A 등급입니다.");
+            break;
+        
+            case 8:
+            document.write("합격이며, 점수는 불명입니다.")
+            break;
+
+            case 7:
+            document.write("합격이며, 점수는 " + "C 등급입니다.");
+            break;
+
+            case 6:
+            document.write("합격이며, 점수는 " + "B 등급입니다.");
+            break;
+        }
+        }else{
+            document.write("불합격입니다.");
+        }
+        }
+
+
+
+        
+        // let score= Math.floor(prompt("점수 입력란")/10);    
+        // //parseInt로 해도 됨
+
+        // switch(score){
+        //     case 10:
+        //         document.write("만점");
+        //         break;
+
+        //     case 9:
+        //         document.write("A등급");
+        //         break;
+        
+        //     case 8:
+        //         document.write("B등급");
+        //         break;
+
+        //     case 7:
+        //         document.write("C등급");
+        //         break;
+
+        //     case 6:
+        //         document.write("D등급");
+        //         break;
+            
+        //     default:
+        //         document.write("탈락입니다.");
+        // }
+
+        // 점수에 따른 등급
+        // 일단 점수입력
+        // 그리고 점수에 따라 등급 나누기 시작
+        // 일단 점수부터 하자
+
+        // 합격 불합격은 10 나눠서 파스인트해서 (0~6)
+        // 그 이상은 등급으로 기록
+        
+        //case 숫자에 조건 거는 것은 나중에...?
+
+        //if를 안걸면 default 값으로 나머지 작은 숫자들을 걸 수 있다.
+        // 위에서 내려오는 성질 잘 확인.
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
