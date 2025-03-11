@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //    let order=1;
+    //    do{
+    //     document.write(i+ "<>");
+    //     order++;
+    //    } while (order>5);
+       // do while은 한번은 실행함.
+       // while은 처음부터 안실행 할수도 있음.
+       // 굳이 조건을 어기면서까지 실행할 이유가 없어서 잘 안씀
+       
+       
+    //     for(let dan=1; dan<10; dan++){
+    //         document.write(dan + "단 : ");
+    //     for(let num=1; num<10; num++){
+    //         document.write(dan+"*"+num+"="+ dan*num+" ");
+    //     }
+    //         document.write("<br>");
+    //    } 
+       
+
+        for(let i=1; i<=5; i++){
+        
+        for(let j=1; j<=i; j++){
+        document.write(j);
+        }
+        }
+
+        // 문제: 1 12 123 1234 12345 가 찍히게 하는 for의 진행은?
+        
+        // for 처음부터도 초기변수, 조건을 보고 실행함
+        // 한번 조건이 취소되면 윗항으로 올라가 완전 리셋이 됨
+        // for 중첩은 첫번째 항이 전체 군집의 수, 두번째 항은
+        // 조건으로인해 실행될 항의 반복을 나타낸다.
+
+        // string 글자 찾기 등에 사용됨.
+
+        for(let i=1; i<=5; i++){
+        
+        for(let j=1; j<=(6-i); j++){
+        document.write("*"+"");
+        }
+        document.write("<br>");
+        }
+
+
+
+
+        for(let i=5; i>=5; i--){
+
+        for(let j=1; j<=i; j++){
+        document.write("*"+"");
+        }
+        document.write("<br>");
+        }
+        
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+
+</body>
+
+</html>

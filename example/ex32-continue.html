@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        while(true){
+            let score = parseInt(prompt("점수를 입력하세요(0~100)"));
+            if(score < 0 || score >100){
+                // document.write("0~100 사이의 점수를 입력해 주세요");
+                confirm("0~100 사이의 점수를 입력해 주세요");
+                continue;
+                //continue는 다시 올라가서 입력하게 함
+            }
+
+            if(score>=60){
+                document.write("합격입니다.");
+                break;
+            }
+            //if 와 다른 구문의 관계는 if 조건이 안맞으면 그냥
+            //지나쳐서 밑으로 내려간다.
+            //밑의 모든 선택지를 안거치게 할때는 else가 쓰임.
+
+            document.write("불합격입니다.");
+            break;
+
+        }
+        //continue문사용 그냥 while문이랑 다른 것은?
+        //
+
+
+        // conti
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+
+</body>
+
+</html>
