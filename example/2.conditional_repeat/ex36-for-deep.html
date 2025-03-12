@@ -31,26 +31,81 @@
 
         // 10~30까지의 약수 구하기
         
-        let dc=0;
-        let pn=0;
+        // let divCount=0;
+        // let primeN=0;
 
-        for(i=2; i<=100; i++){
+        // for(i=2; i<=100; i++){
         
-            for(j=2; j<=(i/2); j++){
+        //     for(j=2; j<=(i/2); j++){
        
-                 if(i % j ===0){
-                     dc++; 
-                    }
+        //          if(i % j === 0){
+        //              divCount++; 
+        //             }
         
+        //     }
+        //     if(divCount=== 0){
+        //         primeN++;
+        //     }
+        //     divCount= 0;
+        //     //여기서 변수 초기화가 중요
+        // }
+        
+        // document.write(primeN);
+        
+        
+        
+           
+        // let primeNumber =0;
+      
+        
+        // for(i=2; i<=100; i++){
+        //     let count =0;
+            
+        //     for(j=2; j<=(i/2); j++){
+
+        //         if(i % j === 0){
+        //             count++;
+        //         }
+        //     }
+
+        //     if(count === 0){
+        //         primeNumber++ ;
+                
+        //     }
+
+        // }
+        // document.write(primeNumber);
+      
+
+        
+
+
+         
+       
+        let primeNumber =0;
+      
+        
+        for(i=2; i<=100; i++){
+            let flag =false;         
+            
+            for(j=2; j<=(i/2); j++){
+
+                if(i % j === 0){
+                    flag = true;
+                    break;
+                }
             }
-            if(dc===0){
-                pn++;
+// 맨처음 true를 확인하여 false이면 바꿈
+            if(flag === false){
+                // !flag하면 true라는 뜻도 됨.
+                primeNumber++;
+                
             }
-            dc=0;
-            //여기서 변수 초기화가 중요
+
         }
-        
-        document.write(pn);
+
+        document.write(primeNumber);
+
 
     // 제일 어려운 것은 항과 항을 빠져나올때의 관계
     // 두번째는 항이 특정 관계를 만족할때
@@ -80,20 +135,11 @@
     // 중괄호 끝 단은 처음 시작 단에 잘 맞춰주고
     //  같은 수준은 엔터쳐서 같은 단에 또 써준다.
     
-    // 강사2부터 100까지의 소수의 개수...
+    // 강사님 문제 : 2부터 100까지의 소수의 개수...
     // 1과 자기자신외에는 나눠지지 않는 수
     // 
 
-
-
-
-
-
-
-
-
     </script>
-
 
 </head>
 

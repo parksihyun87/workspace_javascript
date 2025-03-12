@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+        
+function taxi(dis,time){
+    price= 3000;
+    
+    if (dis<=10){
+        price=price + dis*500;
+    }
+
+    if (dis>10){
+        price=price + dis*700;
+    }
+
+    if (time<=6||time>=22){
+        price = price * 1.2;
+    }
+    return price;
+}
+
+//taxi price를 출력
+
+while(true){
+let dis= parseInt(prompt("거리 입력"));
+let time = parseInt(prompt("시간 입력"));
+// let fare= taxi(dis,time); 해서 해도 됨.
+
+if(dis<1 || time<0 || time>23){
+    confirm("입력값이 잘못되었습니다.");
+    continue;
+}
+
+document.write(taxi(dis,time));
+break;
+}
+
+// 10km 5시 5000 3000  8000*1.2=9600
+
+// while true 잘못된것 받을 곳은 continue로 자기자신을 돌게 한다.
+//마지막은 break;로 끝
+
+    
+</script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

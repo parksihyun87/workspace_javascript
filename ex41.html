@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // function stringNo(a){
+        // let result="";
+        // result= a.length;
+        // return result;
+        // }
+
+        // document.write(stringNo(aa));
+        // 견본
+
+        function testResult(a) {
+            // 매개변수라서 let a를 안한 것일 뿐
+            // 불러오는 변수와 부름 당하는 변수는 서로 다른 것임
+            let grade;
+            if (a >= 90 && a <= 100) {
+                grade = "a등급";
+            } else if (a >= 80 && a <= 89) {
+                grade = "b등급";
+            } else if (a >= 70 && a <= 79) {
+                grade = "c등급";
+            } else if (a >= 70 && a <= 79) {
+                grade = "c등급";
+            } else {
+                grade = "d등급";
+            }
+            return grade;
+        }
+
+        /// 펑셔날안에 변수를 저장하면 나가기 전에 
+        /// 무엇을 리턴할지 저장해놔야 함.
+        while (true) {
+            let a = parseInt(prompt("점수입력"));
+            
+            if (a < 0 || a > 100) {
+                confirm("잘못입니다.");
+                continue;
+            }
+
+            if (a >= 60) {
+                document.write("합격입니다");
+                document.write(testResult(a));
+
+            } else {
+                document.write("불합격입니다.");
+
+            }
+            break;
+        }
+
+        // a,b등급을 만들었음.
+        // if는 리절트 많이 안써도 될거 같은데 맞나
+
+        // 점수전달 함수 만들기.
+
+        // 일단 설계 부터 하자.
+
+        // 점수로 결과가 나오게 하려면 if로 펑셔널 함수를 만들어 보자
+        // 가장 간단한 결과부터 만들자.
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
