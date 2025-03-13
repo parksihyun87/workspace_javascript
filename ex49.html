@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <script>
+    // let gb ="전역";
+    // function test(){
+    //     let lo="지역";
+    //     document.write("함수 안 gb = " + gb + "<hr>");
+    //     document.write("함수 안 lo = " + lo + "<hr>");
+    // }
+    
+    // test();
+    // document.write("함수 바깥 gb = " + gb + "<hr>");
+    // document.write("함수 바깥 lo = " + lo + "<hr>");
+    
+    // 지역변수와 전역변수가 있음. 각자 중괄호 속함에 따라 영향 미치는 범위가 다름.
+    // 함수의 리턴값없으면 그냥 리턴했다고도 이야기함.
+    // f12개발자모드중 코드 진행상 오류의 값을 보는 곳은 대분류중 콘솔
+    // 마지막 미출력임
+
+
+
+
+    //for(let num=1; num<=5; num++){
+    //}(let a= "dd";) for 소괄호 반복변수는 반복되는 동안에는 계속 사용되나
+    // 중괄호안의 변수와는 소멸되는 시기가 조금 다르다.
+
+    // (백틱=` 억음부호=물결 로 감싸기 (달라,중괄호,변수,중괄호) 
+    //  안에는 다 써보기 햅틱) 
+
+    let drink = prompt('한 잔 따른다. "이거 마시면 사귀는 거다!(yes/no)"');
+    if (drink==="yes"){
+        document.write(`답: ${drink} 오늘부터 1일`);
+    } else {
+        document.write(`답: ${drink} 헤어진다`);
+    }
+    
+
+
+    </script>
+
+</body>
+</html>

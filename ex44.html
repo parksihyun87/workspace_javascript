@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(select,num1,num2){
+            result=0;
+            if(select===1){
+                result = num1 + num2 ;                
+
+            }else if(select===2){
+                result = num1 - num2 ;
+            
+            }else if(select===3){
+                    result = num1 * num2 ;
+
+            }else{
+                    result = num1 / num2 ;
+            }
+            return result;
+        }
+        
+        while(true){
+            let select = parseInt(prompt("select 1~4"));
+            if(select<1 || select>4){
+                confirm("잘못된 선택입니다");
+                continue;
+            } 
+                let num1 = parseInt(prompt("num1"));
+                let num2 = parseInt(prompt("num2"));
+           
+                document.write(select ,"번 계산식을 수행합니다. 결과값: " );
+                document.write(calc(select,num1,num2));
+           
+            break;
+        }
+        
+        // 위치상 변수를 입력 하는 곳은 해당 변수가 쓰이는 곳보다
+        // 상위 관계에 위치해야(한, 두단계라도 위에 있어야)식의 진행이 성립할 수 있다.
+        // 변수 선언과 상위 위치, 괄호 위치 잘 정립할 것.
+        // 변수가 나올것만 생각하면 안되고 1. 변수가 표현될 위치를 분리하고,
+        // 변수 선언이 다른 변수를 필요하는 위치를 다르게 나눠서 분리하여 배치한다.
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

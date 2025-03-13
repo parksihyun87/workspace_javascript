@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <script>
+        const jud = window.confirm("confirm()에서 window.가 생략된 것을 이해했나요?");
+        document.write("전역객체 속성 이해했음: " + jud + "<hr>");
+        document.write("isNaN(1)=" + isNaN(1)+"<hr>" );
+        document.write("isNaN('0.5')=" + isNaN(0.5)+"<hr>");
+        document.write("isNaN('str')=" + isNaN('str')+"<hr>" );
+        document.write("eval(3 * 4)=" + eval(3 * 4));
+        // isnan은 ()안에 있는 것이 숫자가 true를 반환함
+        // nan은 숫자가 아니다라는 뜻, 넘버가 아니다라는 뜻
+        // 이즈 난은 숫자가 아닌 대상이 맞냐고 묻는 것인데, 변환가능성을 내포해서 물어본다.
+        // ""가 붙어있는 숫자면 이즈난은 폴스를 반환한다.
+        // isnan(문자)=트루
+        // isnan(숫자)=폴스
+        // confirm 은 true와 false를 리턴함
+    </script>
+
+</body>
+</html>

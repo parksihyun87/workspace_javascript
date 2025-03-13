@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let arr=[10,20,30,40,50];
+       document.write(arr);
+
+       arr=[1, "첫번째", 2.34, true];
+       document.write(arr);
+
+       arr=[10,20,30,40,50];
+       for(let i = 0; i<5; i++)
+       document.write("["+i+"]" + arr[i] +"");
+
+        arr=[10,20,30,40,50];
+        for (let i=0; i<5; i++){
+            arr[i]=arr[i]+5;
+            document.write("["+i+"]"+arr[i] +"");
+        }
+
+        // 여기서 한번 끊고
+        // 배열은 선형 자료 구조 라고 함.
+        // 배열안 개수가 3개면 4바이트가 3개 연달아 저장.
+        // 즉 나눠진 메모리 3개를 선형으로 연달아 점유함.
+        // 배열안의 개개자들을 요소라고 함.
+
+        arr=[];
+        arr[0] = 23;
+        arr[1] = 12;
+        arr[2] = 34;
+        for(let i = 0; i<3; i++)
+        document.write(`arr[${i}]=${arr[i]}`);
+
+        // 빈 대괄호는 빈 배열로 만들 수 있음.
+        // 달러 중괄호는 살리기
+
+        // 0,1,2 번째로 셈
+        // 배열의 형태는 대괄호와 연관이 많다.
+        // 함수인데 객체를 만들면 생성자 함수임.
+        // 배열은 new array()로도 만들 수 있으나 권장하지 않아서
+        // 그냥 설정 추천.
+        // new array(5); 는 다섯개의 빈 공간을 잡아먹음
+        // (안이)두개 이상이여야만 배열함수가 되는것으로 보임
+        // 그래서 모호하지 않은 대괄호로 넣기
+        // .렝쓰는 속성임. 
+        // 문자열 객체는 배열객체에 렝쓰 붙이면 그 숫자만큼 나옴
+        // for로 배열 하나하나를 끌어내 더하느계산을 하기도 한다.
+
+    
+    
+    // 배열할때는 중괄호를 안하는 것도 괜찮음
+    // 배열시 단한줄이라도 중괄호를 하는 습관을 키우자.
+    </script>
+</body>
+</html>

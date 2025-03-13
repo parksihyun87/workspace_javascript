@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function repeatString(str,times){
+            let result = "";
+            for(let i=0; i<times ; i++){
+                result = result + str;
+            }
+
+            return result;
+        }
+
+        document.write(repaetString(33,20));
+
+        // 끝에서 가져오는 리버스 스트링은 뒤의 번호부터
+        // 가져와서 리저트에 계속 합산하는 결과로 가져온다. 
+        // 모든 해당 순서는 서로 일정 정한 곳까지
+        // 순환하는 순서로 진행한다.
+
+        // 리턴은 꼭 써줘야 하지만 돌려줄 값은 없어도 괜찮다.
+        // return; 이렇게
+        // 이럴시 함수호출 우변에 따라오는 매개변수등의
+        // 맺을 관계들이 없어도 된다. 호출만 함.
+
+        // 펑션 함수는  if랑 잘 어울림.
+        // 펑션 함수가 들어있는 변수 자체를 값으로
+        // t/f 등의 값으로 연관문을 만들 수 있음.
+
+        //펑션은 자기가 연관하고 싶은 것들을 다 연결해도
+        // 괜찮음. 계속 연관되므로 잘 살펴야 함.
+
+        // 함수가 재사용안되면 const로 놓자
+
+        // 계속 무한 반복은 오류를 걸르며
+        // (while(true)), (단항 if, cotinue),(계산할 if항)과 엮임
+        
+        // 범위가 어느 이상 어느 이하로 국지적인 해당이면
+        // 다른 항들은 애초에 걸러 있다는 연관성을 의미한다.
+
+        // 지역변수는 계속 만들어지고 사라진다.
+        // 그러므로 호출함수의 매개변수와 펑션의 매개변수는
+        // 지역변수 성질 때문에 서로 상관없으면서 
+        // 연결되는 부분에 들어간다는 점에서 상관있다.
+
+        
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
