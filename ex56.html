@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        
+        // let mapArr = newArr.map((e) => {
+            //         let result=0;
+            //         if (e % 2 === 0) {
+                //                 result = e + 20;
+                //             } else {
+                    //                     result = e + 20;
+                    //                 }
+                    //                 return result;
+                    //             });
+                    
+                    //             document.write(mapArr);
+                    
+        let newArr = [];
+                    
+        for (i = 0; i < 10; i++) {
+            // newArr[i] = Math.floor(Math.random() * 101);
+            let score = Math.floor(Math.random() * 101);
+            newArr.push(score);
+        }    
+        
+
+        newArr.sort((a,b)=>a-b);
+        // 두개씩 비교해서 바로 옆의 것과 바꿔서 바꿔지는것 : 버블쇼트
+        // 자기 자신의 기존열을 바꿔서 바로가기를 리턴값을 해줌.
+
+        // 변수를 새롭게 저장하고 우변에 기존 변수에 소트를 써도 바로가기만 리턴하여 위치 지정하게 된거라 둘은 같은 메모리를 가리키게 되었다.
+        // 그래서 한쪽의 배열값이 바뀌면 다른쪽의 값들도 바뀐다. 개념만.
+
+        // 현재것은 오름차순
+        // (수가)오름차순: 작은게 앞에, (수가)내림차순: 큰게 앞에
+        //(a,b) => b-a : 내림차순
+        // 양수면 위치 바꿈.
+        // 음수면 안 바꿈.
+
+        document.write("<br>"+sortArr);
+        
+        // document.write(`오늘의 랜덤한 배열요소의 숫자 10개는 ${newArr} 입니다.`);
+        // document.write(` 뒷자리수 7개는 ${newArr.slice(3)} 입니다.`);
+        // document.write(` 뒷자리수 7개는 ${newArr.reverse()} 입니다.`);
+        
+        let newScoreArr = newArr.map((e)=>{
+            let result="";
+            if (e>60){
+                result= "합격";
+            } else {
+                result="불합격";
+            }
+            return result;
+        })
+        
+        let newArr2=newArr.filter((e)=> e>=60);
+        // 여기에서는 뒷 부분의 중괄호 생략이 가능해져서 
+        // 바로 비교연산자를 쓴것처럼 보이고 리턴 값도 없어짐.
+        
+        // 결과 프린트
+        // document.write(`${newArr2}`);
+
+        let newArr3 = newArr2.map((e)=>{
+            if(e>=90){
+                return "A등급";
+                
+            } else if(e>=80){
+                return "B등급";
+                
+            } else if(e>=70){
+                return "C등급";
+            
+            } else if(e>=60){
+                return "D등급";
+            }
+        })
+        
+        // document.write(`${newArr3}`);
+        
+        // document.write(`${newScoreArr} 입니다.`);
+        
+        // for(let j=0, j<10, j++){
+            //     document.write(newArr[j], newScoreArr[j]);
+            //  }
+            
+    // return 같은 결과값 출력의 관계자는 매우 중요하다. 결과값 출력 관계자들을 잘 기억해 놓을 것
+    
+    // 해당값이 무엇이 되든 필터링이 되면, 그 값을 수정하여 반영할 수 있는 기회가 생기는 것이 맵의 관계기능이지만 
+    // 다른것을 안쓰고 사용자 기능함수의 관계 설정중에 return이 있는 것을 기억하기.
+    
+    // 배열함수는 뒤에 .배열객체 메서드를 쓰면서 소괄호에 연결하여 화살표 함수를 쓰는게 편리하고 좋기 때문에 
+    // 소괄호 안에 다시 소괄호 변수, 화살표, 중괄호 안의 식이 연결되는 형태가 나타난다.
+    
+    // push는 뒤에서 부터 밀어 넣는 개념이라 첫수를 앞으로 계속 민다.
+    // 식 명을 그대로 메서드 안에 넣어주면 식 전체가 실행되는 것이 된다.
+    
+    
+    // let 변수이름; 하고 (let 이름 ;) 세가지로만 구성 된 것이 상위 초기화 저장
+    // 내가 주로 하는 것은 구성요소들을 재구성하지만 결과가 하나가 아니라 받을 곳이 여러가지가 있을 수
+    // 있음을, 이어질 영향을 받을 곳이 하나 이상일 수 있음을 생각.
+    // 소괄호 e는 화살표 e는 비교연산자 숫자
+        
+
+    // 배열의 개수만큼 함수를 호출해주고, 함수가 모아주는 값을
+    // 리턴해서 새로운 배열을 만들어 줌
+    // 숫자 비우기, 문자 비우기의 상위 개념이 그냥 변수이름; 변수값이 저장안된 상태에서 미리 쓰이기 전까지는 괜찮음.
+
+    // 화살함수의 모양
+    // (e)=>{} 소괄호에 싸고 화살표하고 중괄호에 표현과 반환값 넣기
+    // 그러면 e 자리에 자동으로 우항 .앞의 객체의 각 요소들이
+    // 들어가면서 배열 결과의 리절트들이 반환된다.
+
+    // 매스쩜 랜덤의 내장함수는 대문자로 시작하고 뒤에는 모두 소문자이다.
+    // 해당 내장함수는 뒤에 빈괄호, 곱하기 문자, 숫자 세가지를 포함하며 맨 마지막 
+    // 숫자의 뜻은 실수부(소수점)로 하여 해당 수보다 약간 작은 실수까지의 범위를 포함한다는 뜻이다.
+
+    // 소트 알고리즘등의 컴퓨터 공학내용이 필요함. 짬짬히 라도.
+    // 자바로 구현된 자료구조.
+    // 책 강사. 
+
+
+    </script>
+
+</body>
+
+</html>

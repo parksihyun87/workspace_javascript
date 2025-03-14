@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 전제 변수들이 모두 배열임
+        let a1=[0,1,2,3,4];
+        let a2= new Array (9,8,7,6,5);
+        document.write(`a1=[${a1}])<br>`);
+        document.write(`a2=[${a2}])<hr>`);
+
+        document.write(`a1.concat(a2): ${a1.concat(a2)}<hr>`);
+        // 둘이 합친값을 반환, 처음변수 + 점 + 메서드 + 소괄호 + 그 안에 2번 변수;
+
+        function gt(e) {return(e>=7)};
+        document.write(`a2.filter(gt): ${a2.filter(gt)}<hr>`);
+        document.write(`a2.filter(gt): ${a2.filter(gt)}<hr>`);
+        // fn gt(e)의 트루에 해당하는 값만 필터해서 가져와서 씀.
+        // 첨변+메서드()
+
+        document.write(`a2.indexOf(6): ${a2.indexOf(6)}<hr>`);
+        document.write(`a2.indexOf(6): ${a2.indexOf(6)}<hr>`);
+        // inndexOf(k) 문자열 k가 몇번째 인덱스에 위치하는 지 인덱스 번호
+        // 를 찾아서 반환함
+        
+        a2.push(4);
+        a2.push(5);
+        document.write(`a2.push(4): ${a2}<hr>`);
+        document.write(`a2.push(4): ${a2}<hr>`);
+        //
+
+
+        
+        a2.pop();
+        document.write(`a2.pop() : ${a2}<hr>`);
+        document.write(`a1.reverse(): ${a1.reverse()} <hr>`)
+
+        a2.shift();
+        document.write(`a2.shift(): ${a2}<hr>`);
+
+        a2.unshift(9);
+        document.write(`a2.unshift(9): ${a2}<hr>`);
+        document.write(`a2.slice(1,4) : ${a2.slice(1,4)}<hr>`);
+        document.write(`a2.sort() : ${a2.sort()}<hr>`);
+        document.write(`a2.join("+"): ${a2.join("+")}`);
+
+        //arr1.concat(arr2) arr1과 arr2가 붙고 복사본 됨
+        //arr.filter(function());
+        // filter(function()): 조건에 맞는 배열의 복사본만 반환함
+        // indexOf(x,i) i번째 인덱스(생략가능) 위치 찾아 인덱스번호 반환
+        // join("문자"-"꼭 필요") : 원래는 전부 붙여서 문자 만들고, 아니면 중간중간에 뭐 넣어서 붙여줌
+        // pop()- 배열 맨 뒤의 값을 삭제함
+        // push(x)= 배열 맨 뒤에 x를 삽입함
+        // shift- 앞 제거하고 값 반환
+        // unshift(x)- 앞 부분에 x값 삽입
+        // slice (1,3)- 인덱스 1부터 3직전까지 복사본을 반환함.
+        // toString ["1", "2","3"];
+        // 얘네는 오직 출력만을 위한 함수들로 보임.
+        
+    </script>
+
+</body>
+</html>

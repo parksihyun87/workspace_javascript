@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+    //    function test(a){
+    //         return a<=0;
+    //    }
+       
+
+        //arr.filter(test); 대안
+        
+        //for문으로 구현
+        
+        //    document.writer(filterArr);
+        
+        
+        // document.write(arr.filter((e)=>{return e<0;})); 
+        // let newarr=[];
+        // let j=0;
+        
+        
+        
+        // for(i=0 ; i<arr.length ; i++){
+            //     if(arr[i]<0){
+                //     newarr[j]=arr[i];
+                //     j++;
+                //     }
+                // }
+                
+                // document.write(newarr);
+                
+                // newarr=[1,2,3];
+                
+                //푸시를 쓸 수도 있다.
+                
+                
+                // 변수를 한가지로만 놓았을때는 영향을 받는 것들이 동기화 될 확률이 높아진다.
+                // 그러므로 값이 이상하게 나올때는 변수를 하나 더 있어서 함께 영향을 받지 않도록 한다.
+                
+                
+                //-2와 -3 나오게 포문으로 구현
+                // 함수의 이름만 호출하는 것임 그럼 전체가 들어감
+                
+        let arr=[10,30,4,3,-2,-3,25];
+        
+        let mapArr = arr.map((e)=>{
+            let result;
+            if(e % 2 ===0){
+                result= e +20;
+            } else{
+                result= e +20;
+            }
+            return result;
+        });
+
+        document.write(mapArr);
+               
+        
+        // 필터와 .map 함수는 
+        // 공통점은 순회한다는 점. 새 배열을 만들어서 리턴한다.
+        // 맵함수는 안에 화살함수등이 들어간다.
+        // 화살함수의 모양을 잘 만들어보자. 이것은 사용자 정의 함수이기에
+        // 리턴이 들어간다.
+        // 차이점은 필터는 조건에 맞게 거른다
+
+        // .filter는 선택해야 함
+        // .map은 버리지는 않고 변화시켜서 적용함
+
+        // 새배열 만드는 거임        
+        // 함수의 정의가 들어가야 한다.
+        // 어느때는 ;하고 어느떄는 0하는 걸까.
+
+    </script>
+
+</body>
+</html>
