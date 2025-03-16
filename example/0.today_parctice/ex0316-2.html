@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="alter">글자의 굵기를 변형합니다.</h1>
+
+    <button onclick="change('normal')">정상</button>
+    <button onclick="change('300')">굵게</button>
+    <button onclick="change('900')">더 굵게</button>
+
+    <script>
+        function change(weight){
+            let h1Alter= document.getElementById("alter");
+            //let부 확인
+            h1Alter.style.fontWeight=weight;
+        }
+
+        // 고민이 된다. 여태 속성설정은 :로 했는데 =를 써야 하는건지.
+        // 속성 설정이지만 이제는 프로퍼티 키와 값으로 이름된 프로퍼티화 또는 속성 객체화 되었다고 보여진다. 그래서 추가시 =자로 속성을 추가부여하는 관계가 되었다.
+
+    </script>
+
+</body>
+</html>
