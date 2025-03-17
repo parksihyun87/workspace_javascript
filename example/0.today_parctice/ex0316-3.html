@@ -9,26 +9,77 @@
 
     
 <script>
+   
     
 
+    function inputData(){
+        let arr=[];
+        let i=0;
+
+        while(true){
+            let number=parseInt(prompt("숫자입력"));
+            
+            if(isNaN(number)){
+                alert("잘못된 입력");
+                continue;
+                // 컨펌은 트루면 밑으로 내려감?
+            }
+
+            if(number===-1){
+            break;
+            }
+
+            arr[i]=number;
+            i++;
+        }
+        return arr;
+    }
+    //사용자 함수 입력 부 - 함수부에서 메세지만 찍고 끝낼게 아니라면 어떤 부분을 중요시하여 리턴할지를 고려해가야 한다.
+    // arr등의 변수를 깔끔하게 넣어놓을 생각
+    // isNaN은 명령문 처럼 ()붙어야 하고 그 자체로 트펄이 나오는 기준임.
+    
+    function addData(arr){
+        let sum=0;
+        for(i=0;i<arr.length;i++ ){
+        sum=sum+arr[i];
+        }
+        return sum;
+    }
+    //계산부
+
+    function printData(arr){
+        for(i=0;i<arr.length;i++ ){
+        document.write(arr[i]);
+        }
+    }
+    //출력부: 뭘 출력하지? arr의 모든 배열
+
+    let numArr=inputData();
+    let total=addData(numArr); 
+    let division=total/numArr.length
+    
+    printData(numArr);
+    //합은
+    
+    //디비전
+
+    document.write("합"+total);
+    document.write("디브"+division);
+
+    
+
+    // 다 끝난 아르르의 배열인가 하나씩인가. 다끝난 아르르라고 봐야할 듯.
+    // let arr는 부모 변수로 들어온다고 봐야 한다.
 
 
 
 
-    // let a=3;
-   
-    // let sum=x=> {let r=x+x;
-    //     return r;
-    // }
-    // document.write(sum(a));
 
-    // x=>{x+x;}
-    // x=>x+x;
 
-    // 화살표 함수나 이름없는 함수는 호출보다는
-    // 변수에 저장해서 씀
-    // 이름없는 함수는 사용자 정의 함수와 모양 같음.
-    // 화살표는 변수부 랑 화살표만 추가
+
+
+
+
 
 </script>
 

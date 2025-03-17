@@ -50,7 +50,7 @@
     // 계산부
     function addData(arr){
         let sum=0;
-        for(let i=0; i<arr.length; i++){
+        for(i=0; i<arr.length; i++){
             sum= sum + arr[i];
         }
         return sum;
@@ -59,7 +59,7 @@
    // 출력부
     function printData(arr){
         
-        for(let i=0; i<arr.length; i++){
+        for(i=0; i<arr.length; i++){
             document.write(arr[i] +" ");
         }
     }
@@ -69,15 +69,17 @@
 
     printData(numArr);
 
+     
+    document.write("<br>"+ total);
+    document.write("<br>"+ total/numArr.length);
+
     
 
     // 이렇게 계산과 출력만 하는 부분을 나눠서 재사용하는 것을 모듈화 한다고 한다.
     // 전체를 한 묶음으로만 모아놓으면 이렇게 쓸 수 가 없다.
     // 코드가 길어질 수록 작업단위로 계속 나누도록 노력하기.
 
-    
-    // document.write("<br>"+ sum);
-    // document.write("<br>"+ total/numArr.length);
+   
 
 
 // [안의수는 i, index라고 지칭한다.]
