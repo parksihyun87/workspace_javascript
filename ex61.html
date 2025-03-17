@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>문자열에서 단어 찾기</h1>
+
+<div>
+    <textarea id="t1" style="width: 500px; height: 200px;">
+    </textarea>
+</div>
+
+<input id="t2" type="text">
+<button onclick="textGet()">단어 카운트</button>
+
+<h1>결과:</h1>
+<div id="t3"></div>
+
+
+
+    
+<script>
+    function textGet(){
+        let t1 = document.getElementById("t1").value.toLowerCase();      
+        let t2 = document.getElementById("t2").value.toLowerCase();
+        console.log(t1, t2);
+        let t2Re = t1.split(t2);
+    
+        let t3 = document.getElementById("t3");
+
+        // document.write(t1Arr.split("우리"));
+
+        t3.innerText = t2Re.length-1;
+
+    }
+
+
+</script>    
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- 
+// let str = "attt auuu awww appp";
+// let splitStr=str.split("a");
+// document.write(splitStr);
+// document.write("<br>" + splitStr.length);
+/// 지정문자가 맨앞에 붙어있으면 맨앞에 빈열이 하나 더 생김 -->

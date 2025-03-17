@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    
+<script>
+// 이상해 보일지 모르지만 전열이 나오게 하면서 11번 돌아가며
+// 다시 원래 문자열이 되었다.<-- 원래 문자열로 돌아가게 하려면
+// 이렇게 문자열 +1을 반복했어야 했다.
+
+// let text= new String("Programming");
+
+// let firstChar;
+
+// for(let i=0; i<=text.length; i++){
+//     document.write(text+"<hr>");
+//     firstChar = text[0];
+//     text=text.slice(1)+firstChar;
+// }
+
+// for of 반복문은 배열에서 한개씩 가져다 줌.
+// for let 변수이름 of 원 배열변수이름
+// 처음부터 끝까지 다 찍히는 개념
+
+// const dayString="일월화수목금토";
+
+// for(let day of dayString){
+//     document.write(day+"요일, ");
+// }
+
+const colorArray =["red", "aqua", "gray", "purple", "orange"];
+
+for(let color of colorArray){
+    // document.write("<h1 style='color:"+color+"'>"+color+"</h1>");
+
+    document.write(`<h1 style="color: ${color}">${color}</h1>`);
+}
+
+//새배열 오브 원본 배열 로 해서 새로 순환되는 배열은 변수를 새로 해서 저장해줘야 함
+
+
+</script>    
+
+</body>
+
+</html>

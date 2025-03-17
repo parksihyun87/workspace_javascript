@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>문자열 뒤집기</h1>
+
+<div>
+    <input id="inputText" type="text">
+    <button onclick="splitJoin()">쪼개고 첫문자변환</button>
+</div>
+
+<h1>결과:</h1>
+<p id="outputText"></p>
+    
+<script>
+    function splitJoin(){
+        let inputText=document.getElementById("inputText").value;
+        // 인풋 상태창에 넣은 글자 값:인풋텍스트, 가공할 재료이다. 일단 배열로 바꾸는데 스페이스를 기준으로 배열로 쪼갠다
+        // 그리고 각 배열의 첫글자를 어퍼케이스할 예정이다.
+
+        let outputText=document.getElementById("outputText");
+        // 아웃풋에 넣을 요소 p자리임. 이너 써 줄 것
+        
+        let result= inputText.split(" ")
+        let arr=[];
+        // 스페이스로 나뉜 배열 모양만 만들었습니다.
+        // 예: aaaa bbbb cccc
+        for(i=0;i<result.length;i++){
+            let transform=result[i];
+            // 트랜스폼이 첫번째 스페이스의 묶여있는 글자들. 자체는 배열아님. 위치는 0번째 배열
+            // 1번째 배열로 넘어가야 함. i에서 마지막 배열까지.
+            // result[0][0] 해도 지정이 됨. arr= result[0].charAt(0).toUpperCase() + result[i].slice(1) 이렇게 하면 모든 모양이 진행이 된다.
+            // for-of 문의 순서와 관계. for(let word of arr) for( 렛 밑에들어갈 변수, of, 순회대상 배열 )
+            // 화살표 함수는 이프문등이 없으면 한줄로 써도 된다. 그말은 중괄호와 리턴 다 없애도 된다는 뜻.
+            // .맵은 그자체가 새배열이다. 그러므로 마지막에다가 점 조인까지 해줘도 된다.
+
+            let transform2=transform[0];
+            // 트폼2는 첫 스페이스의 묶인 글자의 첫 글자
+            let transform3=transform2.toUpperCase();
+            // 트폼3가 어퍼케이스 처리
+            let transform4=transform.slice(1);
+            // 첫 글자 제외 모든 글자
+            transform3.concat(transform4);
+            // 대문자와 소문자 모든 결합
+            arr.push(transform3.concat(transform4));
+            // 빈배열에 집어넣기
+        }
+        
+        outputText.innerText=arr.join(" ");
+    }
+        //document.write(arr.join(" "));
+        // 제대로 나오는 형태
+
+        // let transform=result[0] 0은 트랜스폼.렝쓰-1 만큼 증가해야 함.
+        // transform[0].어퍼케이스 + transform[1~끝까지]; 트랜스폼은 슬라이스로 써봐도 좋겠음.
+        // 해당 작업하면 1배열 완료. 1배열은 빈배열에 푸시하던가 아니면 결과값에 붙여버리기.
+        
+        // 다시 트랜스폼2던가 리셋된 것으로 리절트 1 진행, 같은 작업 반복
+
+
+        
+
+</script>    
+
+</body>
+
+</html>
+
+

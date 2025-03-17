@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1>새로운 텍스트 찾는 곳</h1>
+<div>
+    <textarea id="t1">
+
+    </textarea>
+</div>
+
+<input id="t2" type="text">
+<button onclick="textFetch()">찾는 버튼</button>
+
+<h1>결과표시</h1>
+<div id="t3"></div>
+
+<script>
+    function textFetch() {
+       let t1 = document.getElementById("t1").value.toLowerCase();
+       // 텍스트아레아에 들어가는 밸류값(실제문자들)을 가져오고 소문자로 바꿈
+       let t2 = document.getElementById("t2").value.toLowerCase();
+       // 찾는 인풋 텍스트에 들어가는 밸류값을(실제문자들)을 가져오고 소문자로 바꿈
+
+       let result = t1.split(t2)-1;
+       // 리절트는 텍스트아레아의 실제문자들을 t2의 문자를 기준으로 나누어 배열덩어리로 만들고 1을 뺌(하나더 생겨서)
+       // 내가 써놓고 또 확인이 안됨. 배열객체로 만들었지 뺄 수 있는 숫자의 형태가 된 것이 아니다.
+       // 배열 객체는 메서드를 썼을때 배열이 되지 숫자가 아니라고 봐야 한다.
+       // 결과에 대한 해석이 잘못되었다.
+       // 이제 메서드가 달림에 따라 중요한 것은 이 결과가 모양을 나타내는지 숫자를 나타내는지가 중요해진다.
+       // 계속 여기서 틀렸으니 확인하자.
+       // result는 단어로 쪼갠 수 -1
+
+       // 연관관계가 생각보다 머리에 빨리 빨리 안들어옴.
+       // 하나하나 가져올때 연계 되는 것을 생각하며 적어오자.
+
+       // 1. 가져온 이게 뭔지 밑에 쓰자
+       // 2. 이름을 잘 짓고 실제로 이게 무엇이며, 무엇과 연결하는지 잘 연계해야 한다.
+
+       let t3 = document.getElementById("t3");
+       // t3은 div에 표시될 것인데 div 자체임.
+
+       t3.innerText=result;
+       
+       
+       
+       // 단어나 변수의 세밀한 관계 마무리 및 의미 이해;
+       // 나중에 다시 합시다.
+    }
+</script>
+</body>
+
+</html>
