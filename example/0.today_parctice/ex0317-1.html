@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputData" type="text" style="background-color: #eee;">
+    <button onclick="change()">변화</button>
+    <h1> 결과란 </h1>
+    <div id="outputData"></div>
+    
+    <script>
+        function change(){
+            const data =document.getElementById("inputData").value;
+            let outputData=document.getElementById("outputData");
+
+            const joinStr= data.split(" ")
+                               .map((word)=>word.charAt(0).toUpperCase() + word.slice(1))
+                               .join(" ");
+            // 맵을 사용하기 위해 스플릿 배열단계부터 모두 이어서 사용.
+            // 도구를 잘 이용하는 셈 치자
+
+           
+            const JoinStr= data.split(" ")
+                           .map((word)=>{word.charAt(0).toUpperCase + word.slice(1);
+            }).join(" ");
+
+            //맵은 점으로 연결되면 안의 단어와 각 배열이
+            // 연결된 상태로 봄
+            // 맵안에 이렇게 까지 넣나 싶지만, 감싸야 할 때는 이렇게 까지 넣는다.
+
+            // let newArr=arr.join(" ");
+
+            outputData.innerText=joinStr;
+
+        }
+    </script>
+  
+</body>
+</html>
