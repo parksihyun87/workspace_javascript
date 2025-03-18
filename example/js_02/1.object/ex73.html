@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+        const calculator={
+            add(a,b){
+                return a+b;
+            },
+
+            subtract(a,b){
+                return a-b;
+            },
+
+            mulitply(a,b){
+                return a*b;
+            },
+
+            divide(a,b){
+                return a/b;
+            }
+
+        };
+
+        document.write(calculator.add(10,20)+"<br>");
+
+
+        // 변수 저장하듯이므로 꼭 마지막 중괄호에 ";" 가 필요하다.
+        // 중간에 , 하나 빼먹어도 망가지므로 잘 만들 것.
+        // (객체 변수 이름, 는, 중괄호, 세미콜론)
+        // 매스 객체는 수학 함수만 있음
+
+    </script>
+</body>
+</html>

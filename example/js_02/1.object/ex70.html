@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+        let person={
+            name: "cho",
+            age: 23,
+            hobby: "reading",
+            intro: function(){
+                document.write("My name: " + this.name+ ", age: " +this.age +"<br>");
+
+            }
+        }
+
+        //이제는 퍼슨을 객체를 저장한 변수, 객체변수라고 명한다.
+        // this. 디스점은 나를 가리키는 데이터 같은 것이다. 점 뒤에 추가로 (속성, 함수)를 쓴다.
+
+        person.intro();
+        person.age= 30;
+        person.intro();
+        person.name = "kim";
+        person.job = "teacher";
+
+
+        console.log(person.job);
+
+
+        // 객체는 =데이터(=속성)과 메서드로 이루어져 있음. 메서드로 데이터를 다룰수 있음
+        // 객체는 데이터로만 되어있을수도있고 함수로만 이루어져있기도 함.
+        
+        // 현재 스크립트 문 내려오며 실행한 결과임.
+
+        // 객체는 데이터(속성)와 함수
+        // : 는 이름짓기도 되고 불러오기도 됨
+        // let person={name:"cho", age: 23};
+        // 이렇게 여러개 넣는 것과 같다.
+        // 메서드 이름: 사용자함수 쓰기, 하면 사용자 함수의 이름이 정의됨
+        // 인터프리터? (한줄씩) 자바 스크립트
+        // 자바 컴파일은 다 읽음(반반이긴하다함)
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+      let studentData={
+        name: "sihyun",
+        english: 80,
+        math: 70,
+        science: 80,
+        
+        printScore(){
+          document.write(`영어점수: ${this.english} 수학점수: ${this.math} 과학점수: ${this.science}`);
+        },
+
+        sumScore(){
+          const sum=this.english+this.math+this.science;
+          return sum;
+        },
+
+        avgScore(){
+          const avg=(parseInt((this.english+this.math+this.science)/3));
+          return avg;
+        }
+
+        // sum의 경우 결과 프린트보다는 더한 값을 돌려주는 것이 그 목적에 알맞음
+        // 멤버들만 this.붙이고 그 안의 것들은 지역변수임.
+      };
+
+        // studentData.printScore();
+ 
+        // document.write(studentData.sumScore());
+        document.write(studentData.avgScore());
+        
+        // console.log(studentData);
+
+
+        // 객체 안에서 속성의 값을 가리키고 싶을 때에는 this(dom역할).해당 속성이름까지 두개만 
+        // 찍어주면 해당 값이 나온다.
+        // 객체 밖에서 객체안의 함수를 호출할 떄는 객체이름(dom역할).함수이름() 해주면 된다.
+
+        // 펑션도 삭제하고 쓸 이름만 가지고 만들면 됨.
+        // 화살표 함수는 내가 해당 변수로 식안에서 뭔가 진행해야 하거나, (비교,삽입)
+        // 함수 자체의 정의(시간지연 함수)가 필요할때 쓰면 된다.
+        // 필요하면 더 간단한 형태의 이름없는 함수로 만들어도 좋다.
+        // 보통은 다른 변수 없이도 함수식이 진행되는 경우도 많다.
+
+        // 성적 처리할 학생 개체 만들기. 지금은 사용자 정의 객체 만들고 있음.
+        // 실행할 것. 
+        // 1) 연산 처리 함수 (1. 더하기 2. 평균) 만들것 
+        //
+
+        // 2) 성적을 배열로 만들어서 과목:점수 한 덩어리로 넣어보고, 호출에 성공하기
+    </script>
+</body>
+</html>

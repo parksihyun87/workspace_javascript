@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+        const shoppingCart = {
+          items : [],
+          addItem(item){
+            this.items.push(item) //내 안에서 뭔가 만들때는 지칭자가 꼭 필요함. 접근시 this. 디스 점을 꼭 붙임. 도큐먼트점. 겟으로 가져와 접근할때와 비슷함.
+            console.log(`${item} added to cart `);
+          },
+          removeItem(item){
+            this.items=this.items.filter((e)=>e!==item);
+            console.log(`${item} remove item`)
+            // item의 상태가 나옴
+          },
+          // 필터를 사용할때는 같지 않다.는 애들만 걸르고 싶어요. 
+
+
+          listItems(){
+            document.write(this.items);
+          }
+        };
+        
+        shoppingCart.addItem("검정자켓");
+        shoppingCart.addItem("빨간치마");
+        shoppingCart.addItem("파란바지");
+        shoppingCart.listItems();
+        shoppingCart.removeItem("빨간치마");
+        shoppingCart.listItems();
+
+        // 호출할때는 자기 변수 이름을 한번 부르고. 진행.
+        // 쇼핑카트에 (아이템에) 뭔가 넣는 기능이 필요
+        // 배열 준비
+        // 콘스트는 콘스트를 다시 지정할 수 없는 거지, 객체로서 안에 뭘 넣고 변형하는 것은 괜찮음
+        // 이게 객체
+        // pop 맨 뒤, shift 앞 제거, unshift  앞에 삽입,
+        // 뭘 하면 멈추는 플래그라는 연계...
+
+        //     let arr=[10,20,40,50];
+        //    arr.splice(2,0,30); 
+        //중간삽입은 splice 0은 그냥 끼워넣음, 1개는 1개 덮음
+        //document.write(arr);
+
+        // 걸를때는 filter를 써서 걸른담에 같지 않은애만 다시 넣음
+
+
+
+    </script>
+</body>
+</html>

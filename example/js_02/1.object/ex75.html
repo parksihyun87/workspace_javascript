@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+    <script>
+     
+     const bankAcount={
+      owner: "K.J.A",
+      balance: 10000,
+      accountNumber: "111-222-333",
+
+      deposit(amount){
+        this.balance=this.balance+amount;
+        console.log(`${amount}입금`);
+      },
+
+      withdraw(amount){
+        if(this.balance<amount){
+          documnet.write("잔액이 부족합니다.");
+        }
+        this.balance = this.balance - amount;
+        console.log(`${amount} 출금`)
+        // 콘솔은 해당 매개변수가 움직이는 동작을 옆에다가 작성하면서
+        // 쓴다.
+      },
+
+      displayBalance(){
+        document.write(`${this.owner}님의 잔액은 ${this.balance}입니다.<br>`);
+      }
+     };
+
+     bankAcount.displayBalance();
+     bankAcount.deposit(20000);
+     bankAcount.withdraw(10000);
+     bankAcount.displayBalance();
+
+      // 객체 안에 있는 함수 호출할때는 객체 이름 먼저 쓰고 점.하고 뒤에 해당 함수 씀. 
+      // 자기 자신안에 있는 것을 지시할때만 this.
+      // withdraw 큰 금액 인출이 안 됨.
+
+      // 은행에서 계좌관리시 
+      // 클래스라는 틀을 통해서
+      // 객체를 계속 찍어냄. 
+      // 사람마다 뱅크어카운트 찍어냄.
+      // 찍어낸 객체 한개한개를 인스턴스라고 함.
+
+      // 리액트에서는 대부분 객체는 한번만 찍어내서 씀
+      // 클래스는 안하고 이렇게 리터럴 방식으로 만듬.
+
+
+    </script>
+</body>
+</html>

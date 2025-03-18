@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1231
+    12312
+    
+    <script>
+        const letters= "0123456789ABCDEF";
+        let color = "#";
+        let count = 1;
+        let intervalId=setInterval(changeColor, 1000);
+        // 이름만 들어가면 함수의 정의가 들어간 것이다.
+        // 다 들어간 것과 같다. 셋 인터벌은 그렇게 써야 한다.
+        // 함수 자체를 화살표 함수로 쓰기도 함.
+        // 이 함수를 만들면 시간을 재는 id가 메모리에 생겨나게 된다.
+        
+        function changeColor(){
+            if(++count>10){
+              clearInterval(intervalId);
+                // 클리어 인터벌은 중지시킴(인터벌아이디를)
+            }
+            
+            for (let k=0; k<6 ; k++){
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            document.write("<div style='background-color:"
+            + color + "'>" + color + "</div>");
+            color= "#";
+        }
+    // 내장함수 잘 기억할 것.
+    // 16진수는 2진수로 변환이 쉬우므로 많이 쓰임
+    // 0~9/10개 a~f/5개
+    // rgb에서 r만 0은 검은색 255는 가장 빨간색
+    //  r의 범위 표현식은 (00에서 ff까지)가 255
+    // 밀리초 1000는 1초 // 타이머의 아이디 1초마다 실행딤.
+    //셋 인터벌은 시간마다 뒤의 함수 이름을 실행한
+    // ++면 제일 먼저 시작함. (아마 수식줄 안에서)
+    // 매스 랜덤 뒤에 곱하기 뒤에 숫자는 그 수보다 작은수까지
+    // arr[index++]=10;
+    // 이 식 하고 인덱스 밑에서 플플 한것과 같다.
+    // 조건에 있는 변수도 변형해도 된다.
+
+    // 기존 도큐멘트 라이트들은 기존 바디부 바로 밑에 생기거나
+    // 하는데 셋 인터벌은 1초 간격을 주면 초마다
+    // 로딩을 하며 바디부를 다 덮어씌워 버림
+
+    </script>
+</body>
+</html>

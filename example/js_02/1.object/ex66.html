@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>할 일 목록</h1>
+<input id="inputData" type="text">
+<button onclick="change()">추가</button>
+
+<ol>
+    <li id="ans1"></li>
+    <li id="ans2"></li>
+    <li id="ans3"></li>
+    <li id="ans4"></li>
+    <li id="ans5"></li>
+</ol>    
+
+<script>
+
+// ans가 증가하는 형식으로 change안에 들어가야 한다.
+// 펑션이 작동할 때 넘버가 증가하고 그게 보존하는 관계를 만들어야 한다.
+// 펑션을 그냥 쓰면 결과가 소멸함
+let number=1;
+let todolList=[];
+
+// 밖에 있는 변수는 사라지지 않고 계속 존재함. 값이 저장됨.
+
+// 내 식으로 먼저 선언한 변수에 계속 값이 돌아옴.
+// 비록 펑션 함수가 일회적이지만 실행시에는 경우가 다름.
+// 특히 펑션 함수의 경우에는 n회적으로 실행할시 
+// 실행시 마다 스크립트 문 안의 변수 값에 영향을 미침.
+
+// 이 상황은 특수히 페이지가 열려있는 상황에서만 사용자 함수로 인해
+// 변수값의 변화가 저장되어 진행됨.
+// 포문 같은 경우도 변수를 증가 시키는데 해당 변수가 포문 후
+// 사용자 함수에 들어간다면 증가된 상태가 반영되어 들어가게 된다.
+
+function change(){
+// 입력부와 출력부 모음    
+if(number<=5){
+let inputData = document.getElementById("inputData");
+// 인풋 데이타 안에 들어가있는 내용 문자를 지칭
+
+let outputData = document.getElementById("ans"+ number);
+// 결과 자리인 리스트 요소를 가져온 상태
+// ans부의 조작을 해야 되는 부분.
+todolList.push(inputData.value);
+// 확인
+outputData.innerText = inputData.value;
+inputData.value="";
+number++;
+}else{
+    alert("더 이상 실행할 수 없습니다.");
+    // alert는 더 이상 실행하지 않고 경고문만 출력함.
+}
+}
+// 출력. 왼쪽 결과 아웃풋에 인풋 데이터 인풋란이 연결.제대로 연결 됨.
+
+// 한번 누르고 기다릴 수 있어야 함
+// 온클릭시 어떻게 해야 숫자가 증가한 상태에서 빠져나올 수 있을까.
+//
+
+//0. 사용자 함수시작으로 인풋과 아웃풋의
+// 연결관계부터 다져 놓을 것.-무조건 기본
+//1. 타입안의 내용 가져오기
+//2. 각 id에 내용 넣기
+//3. 온클릭으로 실행하기
+
+// ans의 해당 변수는 사용자함수 안의 자기자신과
+// 밖의 변수에도 영향을 미쳐야 한다.
+// 이것은 페이지 열린 상태에서의 전역변수 카운트 증가로 이루어졌다.
+
+</script>
+</body>
+</html>
