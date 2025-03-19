@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+객체의 배열에 10개의 객체를 넣고 랜덤으로 10개의 숫자가 나오게 하려고 한다.
+단 랜덤의 숫자를 구하는 식은 파스인트(랜덤0~10하고 )+1하면 된다.
+집어 넣을때도 랜덤으로 집어넣고 나올때도 랜덤으로 나오게 한다.
+
+1단계는 클릭할때마다 랜덤으로 사진이 바뀌게 한다.
+온클릭시 랜덤으로 난수가 찍히게 해서 이미지를 넣는 것은 가능하다.
+클릭시마다 난수 생성하고 해당 부분 가져온다음에 변수로 저장한후 넣을 수 있다.
+
+다음단계로 클릭시마다 객체 안 배열에 객체형태로 이름: 랜덤1~10 숫자: 1~10 이런식으로 난수를 10개 저장한 후
+
+객체/ 안 배열/안 객체/중 아무 하나에서 숫자를 가져오자.
+
+그래서 그 숫자를 이미지 태그로 가져오자.
+-->
+
+    
+    <h1 style="text-align: center;"> 랜덤게임</h1>
+    <div style="width: 500px; height: 400px; overflow: hidden; margin: 0px auto;">
+        <img id="imgTag" src="./img/image1.jpg" style="display: block; margin: 0px auto; width: 100%;height: 100%; ">
+    </div>
+    <div>
+        <button onclick="change()" style="display: block; margin: 15px auto; ">
+        랜덤 이미지 클릭.
+        </button>
+        <div id="nameTag" style="text-align: center;">이미지1</div>
+    </div>
+        <script>
+        let object = {
+            arr: [],
+            arrPush(e) {
+                this.arr.push(e);
+            }
+        };
+
+        function change(){
+            let ranNum = (Math.floor(Math.random() * 10));
+            // 같은 이름 변수라도 전역, 지역변수라면 다른 메모리에 저장됨.
+            // 다른 구역의 지역변수라도 그런가.
+            for (i = 0; i < 10; i++) {
+                let ranNum = (Math.floor(Math.random() * 10) + 1);
+                object.arrPush({ name: `이미지${ranNum}`, number: ranNum });
+            }
+
+            let pickRandom = object.arr[ranNum].number;
+            
+            let output=document.getElementById("imgTag");
+            output.src=`./img/image${pickRandom}.jpg`;
+            //`백틱은 인용할 때 테두리 ""를 쓴 것과 동일하게 연계된다.
+            let outputName=document.getElementById("nameTag");
+            outputName.innerText=object.arr[ranNum].name;
+            
+            // 클릭후
+            console.log(`배열번째 선택:${ranNum}`);
+            //배열 선택 난수 생성 확인. 여기 난수는 0~9로 접근(오류가 안나면 밑에 for 랜넘과 다르게 생성임)
+            console.log(`배열번째의 숫자:${object.arr[ranNum].number}`);
+            //난수로 택한 객체>배열>숫자속성 
+            console.log(object.arr);
+            // arr배열 및 속성 확인
+            object.arr=[];
+            // 무한 푸시 방지
+            // 입력, 계산, 출력 모아서 함수화
+        }
+        </script>
+
+        <!-- 펑션 함수를 통해 특정 개체내에 대하여 배열 추가시 경로 단축을 할 수 있다.
+        객체 내의 펑션 함수는 밖에서 불러올 수 있다.
+        this는 document같은 전체자, 다음 함수나 속성이름 씀
+
+        이제 이벤트 핸들러의 onclick시 펑션함수에서 필요한 부분을 모듈화하면
+        입력부: 해당 배열에서의 결과값 출력->arr>..number 리턴
+        계산부: 해당 리턴값과 이미지 태그 href의 부분 문자열 결합 작성(이미지 태그 가져와야 함.)
+        출력부: 위의 부분을 이미지 태그.href = 계산부에서 완성한 값으로 입력하여 출력하여 이미지의 나타남 완성(온클릭 연결해야 함) 
+        누를때마다 랜덤하게 변화를 위해 입력부와 계산부, 출력부 값을 묶어서 사용자 지정함수로 만든다. -->
+
+</body>
+
+</html>
