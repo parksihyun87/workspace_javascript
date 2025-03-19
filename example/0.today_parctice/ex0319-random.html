@@ -31,7 +31,7 @@
     </div>
     <div>
         <button onclick="change()" style="display: block; margin: 15px auto; ">
-        랜덤 이미지 클릭.
+        랜덤 이미지 클릭
         </button>
         <div id="nameTag" style="text-align: center;">이미지1</div>
     </div>
@@ -50,15 +50,20 @@
             for (i = 0; i < 10; i++) {
                 let ranNum = (Math.floor(Math.random() * 10) + 1);
                 object.arrPush({ name: `이미지${ranNum}`, number: ranNum });
+                // 푸시는 랜덤한 숫자를 네임과 넘버 값으로 줌- 객체 10개
             }
 
             let pickRandom = object.arr[ranNum].number;
+            // 다시 10개의 배열중에 랜덤한 배열을 고른 후 저장된 넘버 값을 불러옴
             
             let output=document.getElementById("imgTag");
             output.src=`./img/image${pickRandom}.jpg`;
             //`백틱은 인용할 때 테두리 ""를 쓴 것과 동일하게 연계된다.
+            // 출력부: 이미지
+            
             let outputName=document.getElementById("nameTag");
             outputName.innerText=object.arr[ranNum].name;
+            // 출력부: 이름
             
             // 클릭후
             console.log(`배열번째 선택:${ranNum}`);
