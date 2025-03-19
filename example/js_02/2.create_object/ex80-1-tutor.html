@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            id:"20253010001",
+            name:"오지환",
+            scores:[],
+            //[{subject:"javaScript", score:85},
+            // {subject:"html", score:95},
+            // {subject:"css", score:75},
+            // {subject:"java", score:85}];
+            addScore(score){
+                this.scores.push(score);
+                console.log(`${score.subject} ${score.score}점 입력`);
+                
+                // 배열안에 배열개인 넣어도 객체면 표현은 객체식으로 함. 객체성이 이김.
+                // 객체쩜. 요소 
+                // 스코어는 배열안에 요소를 밀어넣는 식임.
+                // 객체안에 속성(데이타) 중 하나인 빈 배열에는 객체를 밀어넣을 수 있으며
+                // 각 배열칸에 있는 객체는 여러 속성을 가지고 있음.
+            },
+            getTotal(){
+                let sum = 0;
+                for(let s of this.scores){
+                    sum = sum + s.score;
+                }
+                // for(let i=0; i<this.scores.length; i++){
+                //     sum = sum + this.scores[i].score;
+                // }
+                // 하위에서 시작하는 접근은 하위에서부터 설명
+                return sum;
+            },
+            getAverage(){
+                let sum = this.getTotal();
+                let avg = sum /this.scores.length;
+                return avg;
+            }
+        };
+
+        student.addScore({subject:"javaScript", score:85});
+        student.addScore({subject:"html", score:95});
+        student.addScore({subject:"css", score:75});
+        student.addScore({subject:"java", score:85});
+
+        document.write(student.getTotal() + "<br>");
+        document.write(student.getAverage());
+
+    </script>
+</body>
+</html>

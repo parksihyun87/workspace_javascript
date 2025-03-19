@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form name="myform">
+    사용자ID<input type ="text" name="userId"><br>
+    패스워드<input type="password" name="passwd"><br>
+    <input type="submit" value="log in" onClick="getInput()">
+  </form>
+    바디구분선
+  <hr>
+
+  <script>
+    function getInput(){
+      const id=document.myform.userId;
+      const pw=document.myform.passwd;
+      if(pw.value.length<=4){
+        alert(`${id.value}님 패스워드를 변경하세요`);
+      }else{
+        alert(`${id.value}님 환영합니다.`);
+      }
+    }
+
+
+   
+   
+   
+    // 폼태그만에 태그에 네임이 붙어있을때 특정 접근이 가능하다.
+    // document.myform.userId 이런식으로 태그 자체를 지칭이
+    // 가능하다.
+    // 배열+객체로 가져오는 함수에서 일단 배열로 접근, [숫자]
+    // 그다음은 객체로 접근 객체이름이 앞이니깐 그냥 쩜 속성
+
+
+  </script>
+</body>
+</html>

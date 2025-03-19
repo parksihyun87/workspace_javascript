@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const student = {
+          id:"20253010001",
+          // 문자열로 만들어서 사용
+          name: "오지환",
+          scores:[],
+          addScore(score){
+            this.scores.push(score);
+            console.log(`${score}점 입력`);
+            // 콘솔은 반복되는 작업에서 변수명, 그리고 텍스트를 섞어 놓으면 반복 작업을 볼 수 있다.
+          },
+          getTotal(){
+            let sum=0;
+            for(let s of this.scores){
+              sum = sum + s.score;
+
+              // scores안에서 s는 배열자인 객체
+              // 그 안의 점수를 더하려면 일단 배열이라는 사실을 빼고 그 자체 s부터 시작하여 그 겍체 안의 점수를 선택해야하므로 s.score
+              // 들어가는 변수 있을때는 this 도 뺌
+            }
+            return sum;
+          },
+          getAverage(){
+            let sum=this.getTotal();
+            let avg=sum/this.scores.length;
+            return avg;
+          }
+      };
+
+      student.addScore({subject:"javaScript",score:85});
+      // 객체의 배열에 배열형태로 넣음
+      // 속성으로 객체를 넣음.
+
+      //객체 넣음
+
+      student.addScore({subject:"html", score: 85});
+      student.addScore(75);
+      student.addScore(90);
+
+      document.write(student.getTotal()+"<br>");
+      document.write(student.getAverage());
+
+      // 객체는 속성과 함수, 배열이 들어간다. 이것으로 작업들을 한다.
+      // 안에서는 지시 지칭자 꼭 필요하다. 무슨 작업을 하든
+      // 사용자 함수 안에 또 사용자 함수 넣어도 된다. 변수 저장형태로 호출.
+    </script>
+</body>
+</html>

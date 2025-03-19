@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+
+<body>
+<style>
+</style>
+<script>
+
+let randomScore1 = Math.floor(Math.random() * 101);
+let randomScore2 = Math.floor(Math.random() * 101);
+let randomScore3 = Math.floor(Math.random() * 101);
+let randomScore4 = Math.floor(Math.random() * 101);
+    const student = {
+        name: "김준홍",
+        birth: "1999-09-09",
+        studentCode: "1234",
+        tel: "010-9117-8729",
+        tel2: "010-1111-1111",
+        graduate: false,
+        schoolYear: 2,
+        
+        gradeByYear: {
+            grade1: [randomScore1, randomScore2, randomScore3, randomScore4],
+            grade2: [randomScore1, randomScore2, randomScore3, randomScore4],
+            grade3: [randomScore1, randomScore2, randomScore3, randomScore4],
+        },
+        gradeAvrByYear() {
+            let sumGrade = 0;
+            switch (this.schoolYear) {
+                case 1:
+                    for (let i = 0; i < this.gradeByYear.grade1.length; i++) {
+                        sumGrade = sumGrade + this.gradeByYear.grade1[i]
+                    }
+                    break;
+                case 2:
+                    for (let i = 0; i < this.gradeByYear.grade2.length; i++) {
+                        sumGrade = sumGrade + this.gradeByYear.grade1[i]
+                    }
+                    break;
+                case 3:
+                    for (let i = 0; i < this.gradeByYear.grade3.length; i++) {
+                        sumGrade = sumGrade + this.gradeByYear.grade1[i]
+                    }
+                    break;
+            }
+            sumGrade = sumGrade/this.gradeByYear.grade2.length;
+            return sumGrade;
+        },
+
+        studentInfo() {
+            let checkName = prompt("이름을 입력하세요.");
+            let checkCode = prompt("학번을 입력하세요.");
+            if (this.name === checkName && this.studentCode === checkCode) {
+                document.write(`Info<br>이름 : ${this.name}<br>생년월일 : ${this.birth}<br>`);
+                document.write(`학년 : ${this.schoolYear}<br>전화번호 : ${this.tel}<br>비상연락망 : ${this.tel2}<br>`);
+                if (this.graduate) {
+                    document.write(`졸업여부 : 졸업<br>`);
+                } else {
+                    document.write(`졸업여부 : 미졸업<br>`);
+                }
+                document.write(`학년 평균 : ${this.gradeAvrByYear()}`);
+            } else {
+                document.write("잘못입력하였습니다.")
+            }
+        }
+    };
+
+    student.studentInfo();
+
+</script>
+
+</body>
+
+</html>

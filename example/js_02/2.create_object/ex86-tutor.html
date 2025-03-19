@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="check1" name="myAdd" value="1500" checked="true" onclick="getCheckbox('check1')">
+    <label for="check1">추가채소 1500원</label><br>
+    <input type="checkbox" id="check2" name="myAdd" value="1000" onclick="getCheckbox('check2')">
+    <label for="check2">추가음표 1000원</label><br>
+    <input type="checkbox" id="check3" name="myAdd" value="500" onclick="getCheckbox('check3')">
+    <label for="check3">추가피클 500원</label><br>
+    <hr>
+    <p id="result">추가금액: 0원</p>
+    <input type="button" value="reset" onclick="resetOder()">
+
+    <script>
+        let sum = 0;
+        const items=document.getElementsByName("myAdd");
+        for(let item of items){
+            if(item.checked){
+                sum = sum + parseInt(item.value);
+            }
+        }
+        document.getElementById("result").innerText = `추가금액: ${sum}원`;
+
+
+        function getCheckbox(id) {        
+            const item = document.getElementById(id);
+            if(item.checked){
+                sum = sum + parseInt(item.value);
+            }else{
+                sum = sum - parseInt(item.value);
+            }          
+
+            document.getElementById("result").innerText = `추가금액: ${sum}원`;
+        }
+
+        function resetOder(){
+            sum=0;
+            // const items = document.getElementsByName("myAdd");
+            // 없어도 됩니다. 전역변수로써 유지.
+            for(let item of items){
+                item.checked = false;
+            }
+            
+            // for(let a of b)로 시작하는 전체 순회자는 b에는 들어갈 배열 혹은 전체 문자열 들어가고,
+            // a는 가상의 대체요소 이름으로 각 배열요소를 식안에서 어디다 두어 식의 영향을 만들지 결정하는 조정자이다.
+            // map과 같은데, 맵은 뒤에 화살자 함수 넣어야 함. 맵(안에)e가 반영하며 바꿀 것들을 결정.
+            
+
+
+            document.getElementById("result").innerText = "추가금액 : 0원";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

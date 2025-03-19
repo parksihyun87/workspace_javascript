@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <textarea id="input" rows="5" cols="20">
+  </textarea>
+  <br>
+  <input type="button" value="Get Text" onclick="getTextarea()"><hr>
+  <pre id="result"></pre>
+    바디구분선
+  <hr>
+  
+
+  <script>
+    function getTextarea(){
+      const st= document.getElementById("input").value;
+      document.getElementById("result").innerText=st;
+    }
+    
+    // pre태그는 엔터친것도 그대로 만들어주는 태그다
+    // p 탭누르면 태그 완성
+    // p.ddd 하면 클래스 완성
+    // p#dd 아이디 완성
+    // ul>li*10
+    // 이너 에치티엠엘은 줄바꾸기가 안되고
+    // 이너 텍스트는 줄바꾸기가 된다.
+    // 이너 텍스트는 넌으로 된건 안가져옴
+    // 텍스트 컨텐트는 넌까지 가져옴
+
+  </script>
+
+  
+</body>
+</html>

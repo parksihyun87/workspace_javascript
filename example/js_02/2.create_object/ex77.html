@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+      let studentData={
+        name: "sihyun",
+        english: 80,
+        math: 70,
+        science: 80,
+        arr:[],
+        // arr도 =가 아님
+        arrPush(e){
+          this.arr.push(e);
+          // 밖에서도 나를 가리켜야 할 것 같은데 this만 써도 되는가...
+          // 나를 가리키는 지칭수의 관계만 잇으면 되는지 확인
+
+        }
+      };
+
+      studentData.arrPush("mecha-lion");
+      // 함수 쓸때는 객체명, 함수명 ()하면 됨.
+      console.log(studentData.arr);
+      // 불러올때도 다시 객체명. 
+
+      //푸시 예정
+        
+    </script>
+</body>
+</html>

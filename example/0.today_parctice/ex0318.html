@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputData" type="text" style="background-color: #eee;">
+    <button onclick="change()">변화</button>
+    <h1> 결과란 </h1>
+    <div id="outputData"></div>
+    
+    <script>
+        function change(){
+            const data =document.getElementById("inputData").value;
+            //인풋의 빈칸에 실제 입력된 문자열임
+            let outputData=document.getElementById("outputData");
+            // 아웃풋할 장소의 요소만 가져왔음.
+            
+
+            const dataArr =data.split(" ");
+            let arr=[];
+
+            for(i=0; i< dataArr.length ;i++)
+                {
+                    arr[i] = dataArr[i].charAt(0).toUppercase() + dataArr[i].slice(1);
+                }
+          
+            let newArr=arr.join(" ");
+            // 다 달라붙음
+
+            outputData.innerText=newArr;
+
+        }
+        
+           
+
+            
+            
+            
+        
+
+    </script>
+  
+</body>
+</html>

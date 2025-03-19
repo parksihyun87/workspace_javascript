@@ -33,14 +33,7 @@
 
 </head>
 <body>
-    <script>
     
-    function change(colors){
-        const alter = document.getElementById("alter");
-        alter.style.color=colors;
-    }
-    
-    </script>
 
 
     <h1 id="alter">Change Colors</h1>
@@ -49,7 +42,14 @@
     <button onclick="change('blue')">blue</button>
     <button onclick="change('yellow')">yellow</button>
     <button onclick="change('green')">green</button>
+
+    <script>
+        function change(colors){
+            const alter = document.getElementById("alter");
+            alter.style.color=colors;
+        }
         
+    </script>
         <!-- // 도큐먼트 뒤의 함수 대문자 구분하나하나가 함수임
         // 연결관계가 어려움.
         // 바이에 아이디 지우고 컨스(컨트롤 스페이스) 쓰면 목록 나옴.
@@ -65,11 +65,5 @@
         // 온클릭안에서 사용자 함수 사용시 문자를 집어넣을 때는 문자라는 표시를 위해 ''를 넣어주도록 한다.
         // 변수가 직접 는 자리로 들어갈때는 변수이름 그대로 써줘도 된다.
         -->
-       
-        
-        
-        
-
-    
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>키우고 싶은 동물은</p>
+  <select id="myOption">
+    <option value="dog">개</option>
+    <option value="cat">고양이</option>
+    <option value="dog">오리</option>
+    <option value="dog">코알라</option>
+  </select><br>
+  <input type="button" value="클릭" onclick="getSelect()"><hr>
+  <h2 id="result"></h2>
+  <script>
+    function getSelect(){
+      const index=document.getElementById("myOption").selectedIndex;
+      // 입력부
+      const st=document.getElementById("myOption").options[index].value;
+      // 입력부
+      document.getElementById("result").innerHTML=st;
+      // 출력부
+    }
+    
+    // 각 태그들을 가지고 오면 객체를 가지고 온거임. 그래서 속성으로 (속성이름-키)로 접근하면 값이 나옴
+    // 부모 태그자를 가져오면 아들자들도 딸려오는 관계들이 있다.
+    // 객체 안의 객체이지만 배열형식으로 딸려들어오고,(객체안에 배열이 하나 있는 형식)
+    // 이럴때는 (다수자에('s' 중요)가 붙음과, 배열로 접근)을 의미하게 된다.
+  </script>
+</body>
+
+</html>

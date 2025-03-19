@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="checkbox" name="myAdd" value="1500">추가채소 1500원<br>
+  <input type="checkbox" name="myAdd" value="1000">추가채소 1000원<br>
+  <input type="checkbox" name="myAdd" value="500">추가채소 500원<br>
+  <input type="button" value="add" onclick="getCheckbox()"><br>
+  <p id="result"></p>  
+  바디구분선
+  <hr>
+  <script>
+    function getCheckbox(){
+      let sum=0;
+      const adds=document.getElementsByName("myAdd");
+      for(let i=0;i<adds.length; i++){
+        if(adds[i].checked){
+          sum=sum+parseInt(adds[i].value);
+        }
+        document.getElementById("result").innerHTML=`추가금액:${sum}원`;
+      }
+    }
+    // get 체크박스는 네임으로 모든 것들을 가져온다. 체크박스는 한무더기
+    // 겟으로 가져와 배열화된 객체들을 변수에 저장해 배열로 준비해놓고, 반복할 준비를 한다.
+    // 그만큼 돌려가면서 조건으로는 배열 밑의 속성에 접근하여 체크드라는 불린 값을 확인한다.
+    // for에서 합산할 변수는 밖으로 가져나가야 의미성이 생기므로 , 보통ㄷ
+    // for보다는 상위변수로 놔둔다. 아니면 리턴값으로 빼던가.
+    // 더할 값은 파스인트를 하고 미리 인풋박스에 입력한 밸류 속성값을 가져와서 
+    // 섬에 더하고 펑션내에서 표현토록 한다.
+
+    // 체크표시 눌러서 즉발로 바꾸기
+
+  </script>
+
+  
+</body>
+</html>

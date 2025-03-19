@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="checkbox" id="myCheckbox"> 다음 단계 진행 확인!<br>
+  <input type="button" value="process" onclick="getCheckbox()"><hr>
+  <!-- 버튼안에 밸류값은 버튼 이름이 됨 -->
+  <p id="result"></p>
+    바디구분선
+  <hr>
+  
+
+  <script>
+    function getCheckbox(){
+      if(document.getElementById("myCheckbox").checked==true){
+        //두개는 값만 같은 것인데 됨.
+        document.getElementById("result").innerHTML="작업을 진행하겠습니다.";
+      }else{
+        document.getElementById("result").innerHTML="사용자의 요구로 중단!";
+      }
+    }
+
+
+
+
+    // 태그안에 value 속성값으로 직접 들어갈때는 ""의 영향을 받아 
+    // 문자가 됨.
+  </script>
+
+  
+</body>
+</html>

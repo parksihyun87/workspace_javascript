@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style_js.css">
+<style>
+/* #rotate{
+  display:none;
+  font-size: 40px;
+  color: #00f;
+}
+
+#container:hover> #rotate{
+  display:inline-block;
+} */
+
+</style>
+
+
+</head>
+
+<body style="text-align: center;"> 
+  <div>
+    <h1 id="rotate">Programming</h1>
+  </div>  
+
+  <script>
+    const rotate=document.getElementById("rotate");
+    
+    function rotateString(){
+      const text=rotate.textContent;
+      const firstChar=text[0];
+      const rotatedText=text.slice(1)+firstChar;
+      rotate.textContent=rotatedText;
+    };
+    // 리턴값이 id 값이다.
+    
+    setInterval(rotateString,500);
+    // 입력부에서 객체들을 여러개 선택해서 가져오면(예를들어 3개)
+    // 참조값 즉 위치값이 연결되어 3개 가져오는 것임.(400,500,600번지)처럼
+    // 위치에 있는 객체가 어떤 상태인가를 가져오게 됨.
+    // 생각해보자면 첫째 변수에 직접 접근 혹은 가져와서 직접 바꾸고 확인하는 경우,
+    // 둘째 변수의 위치의 참조값에 정보만을 확인한다.
+    // 순서와 상황에 따라 당연히 값은 변하게 된다.
+    // document.writeln() 줄바꿈 문자가 들어간다.비알
+
+  </script>
+</body>
+
+</html>
