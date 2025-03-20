@@ -15,21 +15,30 @@
             <input type="submit">
         </form>
 
-        <p></p>
-        <p></p>
+        <p id="print1"></p>
+        <p id="print2"></p>
     </div>
 
 
     <script>
-        // 겟 엘레멘트는 도큐먼트로 시작하여 겟.
+        // 겟 엘레멘트는 도큐먼트로 시작하여 겟. 애드 이벤트 리스너는 반드시 태그구조를 가져와야 실행할 수 있다.
         // let formTag=document.formTag;
         // 폼태그는 다른 요소에 비해 우월한 이름적 접근성을 가지고 있음. 돔구조에서 시작해서 바로 이름으로 접근
-        document.formTag.addEventlistener("submit",(e)=>{
+        let path=document.getElementById("formTag");
+
+        let print1 = document.getElementById("print1");
+        let print2 = document.getElementById("print2");
+        
+        path.addEventListener("submit",(e)=>{
          e.preventDefault();
-         
+            document.write("야볼.");
             console.log(document.formTag.nameTag);
             console.log(e.target.nameTag);
                         
+            const textName = e.target.nameTag;
+            // const checkInform = e.target.checkTag;
+
+            print1.innerText = textName.value;
 
 
         })
