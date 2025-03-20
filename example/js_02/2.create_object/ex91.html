@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <div id="box" style="width: 300px; height: 300px; margin: auto;"></div>
+
+  <script>
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    let count = 1;
+    let intervalID = setInterval(changeColor, 250);
+    // setInterval()은 두가지(신경쓸것 세가지)와 연관된다. 셋인터벌
+    // (사용자함수이름- 소괄호가 빠져있다-, 1000밀리초가 1초일때 넣을 변경전 시간단위 )
+    function changeColor() {
+      if (++count > 50) {
+        clearInterval(intervalID);
+      }
+      for (let k = 0; k < 6; k++) {
+        color = color + letters[Math.floor(Math.random() * 16)];
+        // 연산-색깔숫자 하나씩0-15번 6개 합하기
+        // 
+        
+      }
+      document.getElementById("box").style.backgroundColor = color;
+      // 출력인데 칼라 바꾸기
+      document.getElementById("box").style.borderRadius = `${count}%`;
+      // 출력인데 보더 라디우스를 카운트당 적용하기
+      color = "#";
+      // 칼라 리셋. 다음 칼라를 위해.
+    }
+
+    // 입력, 계산, 출력부 영역 구분.
+  </script>
+</body>
+
+</html>

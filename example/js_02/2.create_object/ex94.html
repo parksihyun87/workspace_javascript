@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>이미지 슬라이더</h1>
+  <!-- <div id="imgPlace"></div> 나중에-->
+  <div id="imgPlace"></div>
+  <!-- 이미지 태그 넣을 구역 -->
+  <button onclick="leftClick()">왼쪽 버튼</button>
+  <button onclick="rightClick()">오른쪽 버튼</button>
+  <!-- 이벤트 핸들러는 id가 필요 없다. -->
+  
+  <script>
+    let node= document.createElement("img");
+    // 모든 태그는 객체 개념으로 생성
+    // 태어날때 부터 안에 많은 속성자들이 내포되어 있다.
+    // document.body.appendChild(node);
+    document.getElementById("imgPlace").appendChild(node);
+
+    // 그냥 생으로 바디에 넣어버리니까 기존 구조들 밑에 들어감
+    // 내가 원하는 곳에 속하게 하고 싶다.
+    // 원하는 타겟으로 가려면 쩜으로 가는데 바디가 끝이다. 
+    // 그 다음은 (도큐먼트.겟엘레멘트바이.어펜드차일드(노드))이렇게
+    // 네가지가 섞인 방식으로 관계를 맺어 접근하여 아들자가 된다.;
+    // 만약에 겟 엘레멘츠로 가져오면 배열이 되고.
+    // 
+
+
+    node.src="../../img/media_nation/africa.jpg";
+    
+    let arr=[
+        "../../img/media_nation/africa.jpg",
+        "../../img/media_nation/africa1.jpg",
+        "../../img/media_nation/africa2.jpg",
+        "../../img/media_nation/africa3.jpg"
+    ]
+    let rNum=0;
+    let i=0;
+    // 전체 변수 구역
+    
+    // 펑션은 arr에서 하나가져와서 src에 넣어주기
+    // 주소값은 아르르의 주소
+    
+    function rightClick(){
+      i = (i+1) % arr.length;
+      node.src=arr[i];
+    }
+    // 자주 나오는 식임.
+    
+
+    function leftClick(){
+      i= (i-1+arr.length) % arr.length;
+      node.src=arr[i];
+    }
+    // 좋은 예시임
+
+  //0,1,2,3,0,1,2,3
+  //index=(index+1)%4  
+
+  //3,2,1,0,3,2,1,0
+  //index=(index-1+4)%4
+
+  // 3= -(i-3)/4
+    
+    // i값을 증가시키되 버튼을 누를때마다 
+    // 특정 인덱스의 증감 식으로 반환
+    // 오른쪽 증가 식부터 작성.
+    
+    // 백틱은 구조에 들어갈시 "" 의 표시를 내주고, 변수자들을 살린다.
+    // 배열 만들어서 사진의 저장경로 하나씩 추가할것
+    
+    // 만들때도 구조에 영향을 끼칠 것을 생각해야 하나? 
+    // 하긴 하는데 세부적이진 않고, 만들때는 가장 최대의 구조 영역만 써준다.
+    // 해당 구조를 변수로 꼭 만들어 줘야 하는데, 그래야 부모 경로지정시
+    // 이 변수를 넣을 것을 지정할 수 있으므로
+    // 경로와 변수를 짝, 이어서 아들로 지정과 세가지를 엮어 준다.
+    // 이제 아들 넣기, 세부 경로지정해서 넣어주자. 앞에 따로 뭐 안써줘도 된다.
+    // 이렇게 하면 두가지가 연결되어 태그가 형성된다.
+    // 이 두가지 외에 한가지 더 자식자의 속성을 바꾸는 것 까지 해주는데
+    // 이를 위해서도 node 변수자 지정이 편하다.
+    // 총 세가지를 이렇게 해준다.(세번째는 상황에 따라 꼭 하지 않아도 됨)
+    
+    // 넘값을 주고 하나씩 증가, 하나씩 감소가 되도록
+    // 버튼에 온클릭 주는 것부터 시작.
+    
+    // 아프리카 사진만 로테이션이 되도록 
+    // 오른쪽 버튼: 하나씩 번호 증가한 사진 나오고 끝
+    // 왼쪽 버튼: 하나씩 감소한 사진 나오고 끝
+  </script>
+</body>
+
+</html>

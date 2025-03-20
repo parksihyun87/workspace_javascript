@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{ overflow: hidden;}
+    #followMouse{ transition: tranform 1s linear;}
+</style>
+
+<body>
+    <img src="../example/img/media_animal/bear1.png" alt="" id="followMouse">
+<script>
+    let image=document.getElementById("followMouse");
+    document.onmouseover=updateImage;
+
+    //event라고 매개변수를 두고 event.target하면 이벤트 객체를 받을
+    //수 있음, 화살표 함수를 사용.
+    // 
+
+    function updateImage(event){
+        const X = event.clientX;
+        const Y = event.clientY;
+        image.style.transform=`translate(${X}px,${Y}px)`;
+    }
+// 리니어 하면 천천히 변화시키는 걸 동일한 속도로 하라는 뜻.
+// 도큐먼트 자체도 이벤트 가능한 속성을 갖고 있음
+// 마우스가 움질일때의 중보: 좌표,위치 이런것을 묶어서 이벤트 묶음을 만든다.
+// 트랜스래이트는 개체를 움직이게 함.
+
+// 이벤트 핸들러가 호출되면 이벤트에 관련한 정보가 전달되고
+// 해당 이벤트의 내용이 작용하여 변함
+// 클x
+// 마우스무브를 따라 움직임.
+
+// 화살표 함수에서 e를 쓰는경우 e.target을 써줌
+
+// 이벤트 함수는 타겟 가져오려는게 90퍼센트임
+// 이벤트 핸들러에게는 이벤트 객체가 전달되는 데 이벤트 객체의
+// 타겟이라는 속성을 통해 정보들이 전달된다.
+
+// this
+
+
+
+</script>
+
+</body>
+</html>

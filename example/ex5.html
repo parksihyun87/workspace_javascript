@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <div>
+        <form name="myform" id="formTag">
+            <span>이름</span>
+            <input type="text" name="textName" id="textName">
+            <input type="checkbox" name="checkInform" id="checkInform">약관에 동의합니다.
+            <input type="submit">
+        </form>
+    </div>
+
+    <p id="print1"></p>
+    <p id="print2"></p>
+
+    <script>
+        // event.preventDefault();
+        // 스크립트가 이벤트의 기본기능들을 없앰.
+        // 그러나 식안에서 e를 받아와서 e.뒷부분 식으로 대입해야 함
+
+        let print1 = document.getElementById("print1");
+        let print2 = document.getElementById("print2");
+        // 결과 태그
+
+        // 폼태그 접근 모양: (dom문서.폼네임.산하네임) 3가지
+        // 이 모든 것들은 네임을 붙여주되, 경로를 위해 상하위구조에 다르게 붙임 
+
+        let formTag = document.getElementById("formTag");
+        // 폼태그를 가져옴
+
+        formTag.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // event 관련 정보 전체를 넘겨줌. 이벤트가 발생한 객체 전체
+            // e타겟으로 내용 접근이 쉽기에 폼태그로 사용함.
+            // 태그가져오기,쩜,애드이벤트리스너(이벤트가 아니라 짝인 지칭인 이벤트리스너가 제목),소괄호, 쌍따옴표 이벤트리스너 제목, 함수의 정의)
+
+            // 
+            
+
+            const textName = e.target.textName;
+            const checkInform = e.target.checkInform;
+
+            //let name= e.target.userName.value;
+            // e.target은 가져온 폼태그전체라고 봐야할 듯.
+
+            //let agree=e.target.checkAgree.checked;
+
+            // (agree ? "동의함" : "동의하지 않음")
+            // 이 항 자체가 문자가 찍혀 나온다.
+            // 삼항자에서 값을 "내용"으로 찍으면 그게 찍혀 나옴.
+
+            if (checkInform.checked === true) {
+                print2.innerText = "동의하셨습니다.";
+            } else {
+                print2.innerText = "동의하지 않으셨습니다.";
+            }
+
+            print1.innerText = textName.value;
+
+            console.log(e.target);
+
+        })
+
+        // e를 써야 함. true 확인 꼭 하자.
+
+        // 식의 실행을 막기 위해서는 e.preventDefault()
+
+        // 이벤트 리스너는 앞부분에 경로 지정이 먼저임. 다음에 이벤트 이름을 등록하고, 함수부를 작성한다.
+        // 경로점.get으로 가져온 태그.addEventListner("기능",함수);
+
+        // 다시 써보기=>
+        // 
+
+
+    </script>
+
+</body>
+
+</html>

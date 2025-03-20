@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<body>
+  <h3 id="target">사이트 추가하기</h3>  
+  <input type="button" value="add" onclick="addNode('https://daum.net')">
+  <script>
+
+
+    function addNode(t){
+      let node=document.createElement("a");
+      node.href= t;
+      // t로 현재 주소는 입력되었음
+
+
+      node.innerHTML= "이너 에치티엠엘";
+      // node.innerHTML= `<hr>${t}`;
+      // node.href
+      // <a> __여기 쓰고 있음:<hr><a href 내용이 들어가있음></a>
+      // 나의 잘못된 개념 확인: a 태그는 안에 텍스트자가 있어야 링크가 가능하다.(다른태그라도)
+      // 그래서 주소를 써주는 것임
+      // 순서는 <a></a> 후에
+      
+      document.getElementById("target").appendChild(node);
+    }
+
+    // 크리에이트엘리먼트("tag")태그 노드를 생성한다. 
+    // 처음 html 킬때 돔트리가 렌더링 됨. 크리에이트 엘리멘트는 돔트리 렌더링할때 없었기에
+    // 추가시 자기 부모가 될 곳을 찾아야함. 삭제할 때도 부모밑에서 삭제로 써야함
+    // divtag.appendchild(node) 해서 자식으로 (부모 밑으로) 들어간다.
+    // divtag.removeChild(node)는 제거하는 것임, 아니면 그냥 바디 밑으로 들어감.
+    // 크리에이트 엘리먼트하기와 자식으로 들어가기 두가지는 같이 해줘야 한다.
+
+
+    
+    // function addNode(t){
+    //   let node1=document.createElement("hr");
+    //   let node2=document.craeteElement("a");
+      
+    //   node2.InnerText = t;
+    //   node2.href = t;
+
+    //   document.body.appendChild(node1);
+    //   document.body.appendChild(node2);
+
+    // }
+
+    // 안돌아감 왤까
+  </script>
+</body>
+
+</html>
