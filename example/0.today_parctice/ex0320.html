@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang=ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form name="formTag">
+            <span>이름</span>
+            <input type="text" name="nameTag">
+            <input type="checkbox" name="checkTag">
+            <span>사용자 동의에 체크</span>
+            <input type="submit">
+        </form>
+
+        <p></p>
+        <p></p>
+    </div>
+
+
+    <script>
+        // 겟 엘레멘트는 도큐먼트로 시작하여 겟.
+        // let formTag=document.formTag;
+        // 폼태그는 다른 요소에 비해 우월한 이름적 접근성을 가지고 있음. 돔구조에서 시작해서 바로 이름으로 접근
+        document.formTag.addEventlistener("submit",(e)=>{
+         e.preventDefault();
+         
+            console.log(document.formTag.nameTag);
+            console.log(e.target.nameTag);
+                        
+
+
+        })
+        //이벤트 리스너는 생으로 썼다.
+
+
+
+
+    </script>
+
+
+</body>
+</html>

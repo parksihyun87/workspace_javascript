@@ -19,6 +19,7 @@
     let intervalID = setInterval(changeColor, 250);
     // setInterval()은 두가지(신경쓸것 세가지)와 연관된다. 셋인터벌
     // (사용자함수이름- 소괄호가 빠져있다-, 1000밀리초가 1초일때 넣을 변경전 시간단위 )
+    // 안에 들은 함수를 지속적으로 실행
     function changeColor() {
       if (++count > 50) {
         clearInterval(intervalID);

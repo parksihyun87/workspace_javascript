@@ -43,9 +43,6 @@
             // e타겟으로 내용 접근이 쉽기에 폼태그로 사용함.
             // 태그가져오기,쩜,애드이벤트리스너(이벤트가 아니라 짝인 지칭인 이벤트리스너가 제목),소괄호, 쌍따옴표 이벤트리스너 제목, 함수의 정의)
 
-            // 
-            
-
             const textName = e.target.textName;
             const checkInform = e.target.checkInform;
 
@@ -58,7 +55,7 @@
             // 이 항 자체가 문자가 찍혀 나온다.
             // 삼항자에서 값을 "내용"으로 찍으면 그게 찍혀 나옴.
 
-            if (checkInform.checked === true) {
+            if (checkInform.checked)/*  === true) */ {
                 print2.innerText = "동의하셨습니다.";
             } else {
                 print2.innerText = "동의하지 않으셨습니다.";
@@ -78,7 +75,7 @@
         // 경로점.get으로 가져온 태그.addEventListner("기능",함수);
 
         // 다시 써보기=>
-        // 
+        // 그냥 항의 내용만 쓰면 트루인지 폴스인지 그 자체로 값이기도 함.
 
 
     </script>
