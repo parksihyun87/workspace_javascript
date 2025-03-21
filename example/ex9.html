@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-container{display: flex; gap: 20px;}
+        .product-card{
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>제품 목록</h2>
+    
+
+    <div class="product-container" id="productcontainer"></div> 
+    <script>
+        const products = [
+            {name:"노트북",price:1500000, image:"./img/image1.webp"},
+            {name:"스마트폰",price:800000, image:"./img/image2.webp"},
+            {name:"태블릿",price:600000, image:"./img/image3.webp"}
+        ];
+        const container = document.getElementById("productcontainer");
+        products.forEach((product)=>{
+            const card = document.createElement("div");
+            card.className = "product-card";
+            // 객체의 클래스 부를때는 클래스 내임 하고 = 하고 따옴표안에 써준다.
+            card.innerHTML = ` 
+                <img src="${product.image}" width="100px" height="100px">
+                <h3>${product.name}</h3>
+                <p>가격: ${product.price.toLocaleString()}</p>
+            `; 
+
+            container.appendChild(card);
+            // toLocaleString() : 숫자 세자리마다 콤마.
+        }
+        )
+        // 맵은 배열을 반환하기 때문에 배열에서 다시 가져와야한다.
+
+        // 포문 드가자
+
+        // for (let product of products){
+        //     const card = document.createElement("div");
+        //     card.className = "product-card";
+        //     // 객체의 클래스 부를때는 클래스 내임 하고 = 하고 따옴표안에 써준다.
+        //     card.innerHTML = ` 
+        //         <img src="${product.image}" width="100px" height="100px">
+        //         <h3>${product.name}</h3>
+        //         <p>가격: ${product.price.toLocaleString()}</p>
+        //     `; 
+
+        //     container.appendChild(card);
+        // }
+        // 동일하게 반복한다.
+
+
+    </script>
+</body>
+</html>

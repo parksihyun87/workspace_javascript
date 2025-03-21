@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자 목록</h2>
+    <button type="submit" id="submitBt">사용자 추가</button>
+    <!-- 무엇이 어떤 기능이 구분되는가. 일일히 다 달 수 도 없고.
+        온클릭했어도 클릭이 잘 기억이 안난다.
+        개념의 구역 분리가 필요합니다. 버튼 타입은 서브미트지만, 이벤트 핸들러의 작동은 클릭입니다.
+        그래서 이벤트 프리벤트 디폴트도 필요없게 된다. 자체 클릭시 기능보다 이벤트 리스너에 등록된 동작이 더 중요하다.
+    -->
+
+    <ul id="ulM">
+        
+    </ul>
+
+    <script>
+        let i=0;
+        const arr=[{ name:"김일수", age:"21세" },
+            { name:"김이수", age:"22세" },
+            { name:"김삼수", age:"23세" }
+        ];
+            
+        // 모든 변수는 선언이 필요하다. 인덱스도 인덱스 나름으로 변수선언이 필요할 때가 있다.
+
+        let submitBt= document.getElementById("submitBt");
+        let path = document.getElementById("ulM");
+        
+        // console.log(submitBt);
+
+        submitBt.addEventListener("click",(e)=>{
+            // e.preventDefault();
+            // 실제로 버튼에 달려 있는 타입과, 이벤트 리스너에 있는 기능은 다르다.
+            // 애드 이벤트리스너에는 이벤트명을 적어준다.
+            
+            let create=document.createElement("li");
+            // 도큐+크리에이트 엘레멘트 "속성 이름"
+            // li 객체를 만들어서 리턴 해준다.(객체의 리턴이다.) 돔에 추가가 아니라, 따로 가지고 있는 것과 같다
+            create.innerText=arr[i].name+arr[i].age;
+            path.appendChild(create);
+            //경로라기보다 객체 자체.
+
+            console.log(path);
+            i++;
+
+            if(i===arr.length){
+            e.target.disabled=true;
+            // 버튼이 발생한 객체이므로, e.target. 으로 접근해도 된다.
+            }
+            //버튼에 객체.(디스에이블드 는 트루 )라고 해주면 회색이 되면서 누르는 기능이 사라진다.
+        }
+        );
+
+        // 스크립트 자체는 한번 다 읽었어서 카운트를 올려도 반영될 곳이 없으므로, 변수 값 변형을 통해 동적 반영인 이벤트 핸들러(이벤트 리스너 메서드)에 넣어 준다.
+        
+       
+
+
+    </script>
+      
+</body>
+
+</html>

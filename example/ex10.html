@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>검색해보세요</span>
+    <form name="formTag">
+        <input type="text" name="textTag">
+    </form>
+
+    <ul id="list"></ul>
+
+
+<script>
+    let i=0;
+    const players=[
+        {name:"오지환", position:"유격수"},
+        {name:"김현수", position:"좌익수"},
+        {name:"홍창기", position:"우익수"},
+        {name:"박해민", position:"중견수"},
+        {name:"문보경", position:"3루수"},
+        {name:"오스틴", position:"1루수"},
+        {name:"신민재", position:"2루수"},
+        {name:"손주영", position:"투수"},
+        {name:"박동원", position:"포수"}
+    ];
+    
+    for(let player of players){
+        let ulTag =document.getElementById("list");
+        let node = document.createElement("li");
+        ulTag.appendChild(node);
+        node.innerText=`${players[i].name} : ${players[i].position}`;
+        i++;
+    }
+
+    let ePath= document.formTag.textTag;
+    let newArr=[];
+
+    ePath.addEventListener("input",(e)=>{
+        
+        let filterArr = players.filter((player)=>player.name.includes(
+            e.target.value
+        ));
+        console.log(filterArr);
+        
+        let ulTag =document.getElementById("list");
+        ulTag.innerHTML="";
+        
+        for(let Earr of filterArr){
+            let node = document.createElement("li");
+            ulTag.appendChild(node);
+            node.innerText=`${Earr.name},${Earr.position}`;
+        }
+    });
+    
+    
+    
+    
+    // const filterPlayers=players.name.filter((player)=>player.includes("오"));
+    
+    // console.log(filterPlayers);
+    
+    
+    // let ePath= document.formTag;
+    // 틀렸네 이거..
+    // ePath.addEventlistener("input",(e)=>{
+    // }
+    // );
+        
+        // let ulTag =document.getElementById("list");
+        // let node = document.createElement("li");
+        // ulTag.appendChild(node);
+        // 자식 입양 이 동작 자체가 등록하는 마지막 절차다.
+        
+    // 세미콜론 자리
+
+
+
+
+    // const names="오지환 김현수 홍창기";
+    // const nameArr= names.split(" ");
+    //
+    // const names=[{name:"오지환", position:"유격수"},
+    //              {name:"김현수", position:"좌익수"},
+    //              {name:"오스틴", position:"1루수"}]
+    // const filterArr= names.filter((player)=>player.name.includes("오"));
+    // console.log(filterArr);
+    // 각 배열상태에서 네임 속성
+    // 화살표 함수인데 필터로 "오"가 있으면 트루.
+
+    // 인풋쓴 이벤트핸들러
+    // 인클루드 메서드로 같은 파트를 찾는다.
+
+
+</script>
+</body>
+</html>

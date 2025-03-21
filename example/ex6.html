@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="formTag" id="formTag">
+        <div id="div1">
+            <span style="padding-right: 16px;">아이디</span>
+            <input type="text" name="id">
+        </div>
+
+        <!-- <ul name ="uls">
+            <li name ="lis"></li>
+            <li></li>
+        </ul> 폼태그 안의 폼요소 아닌것들은 접근 불가-->
+
+        <div id="div2">
+            <span>비밀번호</span>
+            <input type="text" name="pw">
+        </div>
+        <input name="submit" type="submit">
+    </form>
+
+    <script>
+        let arr = [
+            { id: "a", pw: "1" },
+            { id: "b", pw: "2" },
+            { id: "c", pw: "3" }
+        ];
+
+        document.formTag.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // <이쩜+ 프리벤트+디폴트+()> 4가지 꼭 할 것. 이것은 괄호를 필요로 하는 메서드임
+            // 메서드와 함수 둘다 () 소괄호가 필요함.
+
+            let flag = false;
+            let local = e.target;
+
+            // 플래그를 통해서 
+
+            for (let arrE of arr) {
+                // 모양상 let a 라고 개별자에 렛을 써야 렛 개별자 오브 배열 정의에 맞다.
+                if (arrE.id === local.id.value) {
+                    flag = true;
+                    
+
+                    if (arrE.pw === local.pw.value) {
+                        alert("로그인 성공입니다.");
+                    } else {
+                        alert("pw가 틀렸습니다.");
+                    }
+                    break;
+                    // 브레이크는 아이디건 pw건 공통적용이니 여기 그냥 쓰기임
+                }
+            }
+            // id 구분 문구를 띄울 수는 있지만, 계속 번거롭게 뜨게 된다.
+            if (flag === false) {
+                alert("ID가 없습니다");
+            }
+
+            console.log(local.id.value);
+            // alert("성공입니다.");
+            // if로 아이디 및 비밀번호 성립시 알러트 메시지 분류(arr에서 가져올때는 객체 개념으로 접근)
+        });
+
+        // 출력부 alert는 이벤트 메서드 안에 입력 예정
+        // 재구성해 볼때는 기능에 의한 모양의 관계를 잘 뜯어 봐야 한다.
+
+        // 분기상 모양도 생각해 볼 수 있다.
+        // 이벤트리스너의 실행후 각 배열에 대해(포 (렛에이오브비)로 접근)
+        // 첫배열 -> 첫배열->
+
+        users.forEach((u)=>{});
+        // 맵이나 필터는 리턴값 꼭 필요한데 필터는 트루나 폴스 필요해서 트루면 취함
+        // 맵은 변경값을 리턴해야 함. 리턴하고 쓰는 건 아니고 값이 있다는 건데
+        // 
+
+
+
+    </script>
+</body>
+
+</html>
