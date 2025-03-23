@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{display: inline-block; width: 50px;}
+    </style>
+</head>
+<body>
+    <form name="formTag">
+        <div>
+            <label for="id">id:</label>
+            <input id="id" type="text" name="idTag">
+        </div>  
+        
+        <div>
+            <label for="pw">pw:</label>
+            <input id="pw" type="text" name="pwTag">
+        </div>
+
+        <div>
+            <button type="submit">로그인</button>
+        </div>
+    </form>
+
+    <script>
+        logArr=[
+            {id:"1",pw:"1"},
+            {id:"2",pw:"2"},
+            {id:"3",pw:"3"},
+        ]
+        
+        
+        document.formTag.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            
+            let inputId=document.formTag.idTag.value;
+            let inputPw=document.formTag.pwTag.value;
+            // let flag= false;
+            // for(let eArr of logArr){
+            //     if(eArr.id===e.target.id.value){
+            //         flag=true;
+            //         if(eArr.pw===e.target.pw.value){
+            //             alert("일단 로그인 성공");
+            //         }
+
+            //         if(eArr.pw!==e.target.pw.value){
+            //             alert("비밀번호 불일치");
+            //         }
+
+            //         break;
+            //         // if(eArr.pw!==e.target.pw.value){
+            //         //     alert("비밀번호 불일치");
+            //         // }
+            //         //브레이크는 도는 것 방지
+
+            //         // js에서 if 문을 하나만 쓰고 밑에 하나더 if 문을 쓰면 엘즈나 엘.이 처럼 선택문을 만드는 것과 같은데,
+            //         // 엘.이나 엘즈는 분기의 선택 통로를 강제하는 면이 있다. 이프를 하나 더 쓰면 이프문의 영향을 한번 더 받고 실행문을 진행한다.
+            //     }
+            // }
+            
+            // if/* (flag===false) */(!flag){
+            //     alert("id가 틀렸습니다.");
+            // }
+            let user ={};
+            logArr.forEach((u) => {
+                if(u.id===inputId){
+                    user= u;
+                }
+            
+            });
+            // let user=logArr.find((u)=>u.id===inputId);
+            console.log(user)
+            
+            if(user===null){
+                alert("id가 없습니다.");
+                return;
+            }
+            // 포이치의 경우는 null이다.
+
+            if(user.pw===inputPw){
+                alert("로그인 성공");
+            } else{
+                alert("로그인 실패. 비밀번호 오류");
+            }
+        });
+
+
+    // 포문 상 아이디는 다 돌면서 각 값이 해당되면 조건식의 값 실행하며, 
+    // 비 해당시는 움찔하며 원래로 돌아오면 뭔가 잘 못 돼있다. 움찔하면서 리셋하는 것은 디폴트가 실행되지 않다는 뜻이니 유의해야 한다.
+    // 항상 뒤에 붙어 바인드 형식으로 행동하는 것들은 변수가 없는 메서드로 ()를 동반할 수 있음을 유의하자.
+    // 소멸하는 지역변수의 경우도 콘솔.로그로 그 행적을 추적 가능한가. 해당이 되는 로그만 가능하며, 순서가 맞아야 한다.
+    // 항상 스크립트는 v8엔진이 먼저 읽고 실행한다는 것을 기억하며, 그럴시 미리 지정되어있지 않아야 하는 변수들을 생각하자.
+    // 포이치는 포오브와 거의 비슷하나, break;가 가능하지 않다고 한다.
+    // 애드이벤트 리스너는 반환하는 함수가 아니며 동작을 할지만 정하기에 리턴값이 필요없다
+    // 마찬가지로 포이치 역시 리턴값이 없다.
+    // 반면에 맵이나, 필터 등은 리턴값이 필요하므로(새배열을 만들어야 함). 화살표의 모양이 
+    // 소괄호임에 주의하자.
+     
+    </script>
+
+
+</body>
+</html>

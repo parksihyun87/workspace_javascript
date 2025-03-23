@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    로또번호 추첨기
+    <div id="divParent">
+    </div>
+
+    <form name="formTag">
+        <input type="button" value="클릭" name="click">
+    </form>
+
+    <script>
+
+        document.formTag.click.addEventListener("click", (e) => {
+            //* 랜덤 난수 5개 조건부
+            let arr = [];
+            for (i = 0; i < 5; i++) {
+                let ranNum = parseInt(Math.random() * 10) + 1;
+                console.log(`랜넘1: ${ranNum}`);
+                console.log(`랜넘1 뒤 배열: ${arr}`);
+                if (i > 0) {
+                    while (true) {
+                        let flag;
+                        flag=arr.find((num)=>num===ranNum);
+                        // u=>u===랜넘.
+                        // 파인드는 찾으면 개별 숫자나 문자가 되고, 못찾으면 언디파인드 상태가 되버리기에 애초에 언디파인해놓고,
+                        // 필터는 못찾으면 빈 배열이 되므로, 렝쓰가 0인지 1인지 확인할 것.                         
+                        if (flag===undefined){
+                            break;
+                        }else{
+                        ranNum = parseInt(Math.random() * 10) + 1;
+                        console.log(`랜넘2: ${ranNum}`);
+                        continue;
+                        }
+                    }
+                }
+                arr.push(ranNum);
+                // 끝나면 푸시해서 랜넘 숫자 삽입
+            }
+        
+            
+            console.log("배열확인 " + arr);
+
+            //* 스판태그 생성부 및 리셋.
+            let divpath = document.getElementById("divParent");
+            divpath.innerHTML = "";
+
+            for (i = 0; i < 5; i++) {
+                let divpath = document.getElementById("divParent");
+                let node = document.createElement("span");
+                divpath.appendChild(node);
+                node.innerText = `(${arr[i]}) `
+            }
+        });
+        
+    </script>
+
+</body>
+
+</html>
