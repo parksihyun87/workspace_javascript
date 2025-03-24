@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="lotto">로또 번호</button>
+    <div id="lottoNumbers"></div>
+
+
+
+    <script>
+        document.getElementById("lotto").addEventListener("click",(e)=>{
+        let numbers=[];
+        for(let i=1;i<=45;i++){
+            numbers.push(i);
+        }
+
+        let lotto=[];
+        for(i=0; i<6; i++){
+            const randomIndex= Math.floor(Math.random() * numbers.length);
+            // 하나씩 빠지면 그중 랜덤 인덱스
+            lotto.push(numbers[randomIndex]);
+            numbers=numbers.filter((n)=>n !== numbers[randomIndex]);
+        }
+
+        lotto.sort((a,b)=>a-b);
+        // 숫자의 오름차순.
+        const lottoNumbersDiv= document.getElementById("lottoNumbers");
+        lottoNumbersDiv.innerHTML=lotto.map((e)=>`<span>${numbers}</span>`)
+             .join("");
+        })
+        // 실행이 안됨. 고쳐야 할 듯.
+
+    </script>
+
+    
+</body>
+</html>

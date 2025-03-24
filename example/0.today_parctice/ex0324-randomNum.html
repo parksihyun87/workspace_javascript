@@ -22,7 +22,7 @@
             //* 랜덤 난수 5개 조건부
             let arr = [];
             for (i = 0; i < 5; i++) {
-                let ranNum = parseInt(Math.random() * 10) + 1;
+                let ranNum = parseInt(Math.random() * 45) + 1;
                 console.log(`랜넘1: ${ranNum}`);
                 console.log(`랜넘1 뒤 배열: ${arr}`);
                 if (i > 0) {
@@ -35,7 +35,7 @@
                         if (flag===undefined){
                             break;
                         }else{
-                        ranNum = parseInt(Math.random() * 10) + 1;
+                        ranNum = parseInt(Math.random() * 45) + 1;
                         console.log(`랜넘2: ${ranNum}`);
                         continue;
                         }
@@ -43,8 +43,9 @@
                 }
                 arr.push(ranNum);
                 // 끝나면 푸시해서 랜넘 숫자 삽입
+                arr.sort((a,b)=>a-b);
             }
-        
+            // 널이나 undefined로 나오면 false, 나머지는 다 true로 간주함.
             
             console.log("배열확인 " + arr);
 
