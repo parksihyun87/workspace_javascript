@@ -40,13 +40,18 @@
             // for (let i = 1; i <= 45; i++) {
             //     numbers.push(i);
             // }
+            //m: 45까지 숫자 배열 만든다.
 
             // let lotto = [];
             // for (let i = 0; i < 6; i++) {
             //     const randonIndex = Math.floor(Math.random() * numbers.length);
             //     lotto.push(numbers[randonIndex]);
             //     numbers = numbers.filter((n) => n !== numbers[randonIndex]);
+            // 숫자는= 배열
             // }
+            //m: 0~5까지 여섯번. 랜덤번호 * 길이, 빈배열 로토에 넘버스의 배열중 랜덤 인덱스를 찾아 집어 넣는다,
+            // 넘버스를 필터했을때 이미 들어간 랜덤 인덱스 번호의 수는 아니다로 채를 걸러서 나머지만 다시 담는다.
+            // numbers=numbers.filter((n)=>n!==numbers[randomindex]);
             
             let lotto =[];
             while(true){

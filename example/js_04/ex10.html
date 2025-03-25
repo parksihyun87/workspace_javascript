@@ -53,6 +53,12 @@
         let filterArr = players.filter((player)=>player.name.includes(
             e.target.value
         ));
+
+        // 해당 이벤트 타겟이 인풋창 포함시, arr에서 이름 포함자를 걸러라
+
+        // let newArr=arr.filter((player)=>player.name.includes(e.target.value));
+    
+        
         console.log(filterArr);
         
         let ulTag =document.getElementById("list");
