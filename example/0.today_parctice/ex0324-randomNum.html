@@ -1,68 +1,90 @@
-<!DOCTYPE html>
-<html lang="ko">
+    <!DOCTYPE html>
+    <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
 
-<body>
-    로또번호 추첨기
-    <div id="divParent">
-    </div>
+    <body>
+        <div style="width: 500px; text-align: center; margin: 0px auto;"><h2>록맨 추첨기</h2></div>
 
-    <form name="formTag">
-        <input type="button" value="클릭" name="click">
-    </form>
+        <form name="formTag" style="width: 500px; margin: 0px auto; text-align: center;">
+            <input type="button" value="클릭" name="click" style="margin: 0px auto; padding: 5px;">
+        </form>
 
-    <script>
+        <div id="divParent" style="width: 505px; margin: 0px auto; margin-top:20px;">
+        </div>
 
-        document.formTag.click.addEventListener("click", (e) => {
-            //* 랜덤 난수 5개 조건부
-            let arr = [];
-            for (i = 0; i < 5; i++) {
-                let ranNum = parseInt(Math.random() * 45) + 1;
-                console.log(`랜넘1: ${ranNum}`);
-                console.log(`랜넘1 뒤 배열: ${arr}`);
-                if (i > 0) {
-                    while (true) {
-                        let flag;
-                        flag=arr.find((num)=>num===ranNum);
-                        // u=>u===랜넘.
-                        // 파인드는 찾으면 개별 숫자나 문자가 되고, 못찾으면 언디파인드 상태가 되버리기에 애초에 언디파인해놓고,
-                        // 필터는 못찾으면 빈 배열이 되므로, 렝쓰가 0인지 1인지 확인할 것.                         
-                        if (flag===undefined){
-                            break;
-                        }else{
-                        ranNum = parseInt(Math.random() * 45) + 1;
-                        console.log(`랜넘2: ${ranNum}`);
-                        continue;
+        <script>
+
+            document.formTag.click.addEventListener("click", (e) => {
+                //* 랜덤 난수 5개 조건부
+                let arr = [];
+                for (i = 0; i < 5; i++) {
+                    let ranNum = parseInt(Math.random() * 45) + 1;
+                    console.log(`랜넘1: ${ranNum}`);
+                    console.log(`랜넘1 뒤 배열: ${arr}`);
+                    if (i > 0) {
+                        while (true) {
+                            let flag;
+                            flag=arr.find((num)=>num===ranNum);
+                            // u=>u===랜넘.
+                            // 파인드는 찾으면 개별 숫자나 문자가 되고, 못찾으면 언디파인드 상태가 되버리기에 애초에 언디파인해놓고,
+                            // 필터는 못찾으면 빈 배열이 되므로, 렝쓰가 0인지 1인지 확인할 것.                         
+                            if (flag===undefined){
+                                break;
+                            }else{
+                            ranNum = parseInt(Math.random() * 45) + 1;
+                            console.log(`랜넘2: ${ranNum}`);
+                            continue;
+                            }
                         }
                     }
+                    arr.push(ranNum);
+                    // 끝나면 푸시해서 랜넘 숫자 삽입
+                    arr.sort((a,b)=>a-b);
                 }
-                arr.push(ranNum);
-                // 끝나면 푸시해서 랜넘 숫자 삽입
-                arr.sort((a,b)=>a-b);
-            }
-            // 널이나 undefined로 나오면 false, 나머지는 다 true로 간주함.
-            
-            console.log("배열확인 " + arr);
+                // 널이나 undefined로 나오면 false, 나머지는 다 true로 간주함.
+                
+                console.log("배열확인 " + arr);
 
-            //* 스판태그 생성부 및 리셋.
-            let divpath = document.getElementById("divParent");
-            divpath.innerHTML = "";
-
-            for (i = 0; i < 5; i++) {
+                //* 스판태그 생성부 및 리셋.
                 let divpath = document.getElementById("divParent");
-                let node = document.createElement("span");
-                divpath.appendChild(node);
-                node.innerText = `(${arr[i]}) `
-            }
-        });
-        
-    </script>
+                divpath.innerHTML = "";
 
-</body>
+                for (i = 0; i < 5; i++) {
+                    let divpath = document.getElementById("divParent");
+                    let node = document.createElement("span");//span대체
+                    divpath.appendChild(node);
+                    if(arr[i]>=40){
+                        node.innerHTML = `<img src="./img/gif5.gif" style="width: 100px; height: 110px; overflow: hidden; margin: 0px auto;">`
+                    } else if(arr[i]>=30){
+                        node.innerHTML = `<img src="./img/gif4.gif" style="width: 100px; height: 110px; overflow: hidden; margin: 0px auto;">`
+                    } else if(arr[i]>=20){
+                        node.innerHTML = `<img src="./img/gif3.gif" style="width: 100px; height: 110px; overflow: hidden; margin: 0px auto;">`
+                    } else if(arr[i]>=10){
+                        node.innerHTML = `<img src="./img/gif2.gif" style="width: 100px; height: 110px; overflow: hidden; margin: 0px auto;">`
+                    } else if(arr[i]>=0){
+                        node.innerHTML = `<img src="./img/gif1.gif" style="width: 100px; height: 110px; overflow: hidden; margin: 0px auto;">`
+                    }
+                }
 
-</html>
+                for (i = 0; i < 5; i++) {
+                    let divpath = document.getElementById("divParent");
+                    let node = document.createElement("span");//span대체
+                    divpath.appendChild(node);
+                    node.innerHTML = `<div style= "display: inline-block; width: 99px; height: 70px; font-size: 25px; font-weight: bolder;
+                     overflow: hidden; margin: 0px auto; text-align:center; padding-top: 25px; 
+                     /* background-image: url('./img/ball.png'); */ background-size:99px 90px; background-repeat:no-repeat;">
+                     ${arr[i]}</div>`
+                }
+            });
+            
+            // `(${arr[i]}) `
+        </script>
+
+    </body>
+
+    </html>
