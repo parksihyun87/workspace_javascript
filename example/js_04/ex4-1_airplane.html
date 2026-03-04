@@ -7,14 +7,20 @@
 </head>
 <style>
     body{ overflow: hidden;}
-    #followMouse{ transition: transform 1s linear;}
+    #followMouse{
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        transition: transform 0.08s linear;
+    }
 </style>
 
 <body>
-    <img src="../img/media_object/airplane_4.png" alt="" id="followMouse">
+    <img src="../img/media_food/food1.png" alt="" id="followMouse">
 <script>
     let image=document.getElementById("followMouse");
-    document.onmouseover=updateImage;
+    document.onmousemove=updateImage;
 
     //event라고 매개변수를 두고 event.target하면 이벤트 객체를 받을
     //수 있음, 화살표 함수를 사용.
